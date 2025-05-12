@@ -1,10 +1,18 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import Home from "./Home";
+import AboutUs from "./AboutUs";
+import Testimonies from "./Testimonies";
+import Contact from "./Contact";
 
 function Homepage() {
   const location = useLocation();
+
+  const homeRef = useRef();
   const aboutRef = useRef();
+  const servicesRef = useRef();
+  const testimoniesRef = useRef();
   const contactRef = useRef();
 
   useEffect(() => {
@@ -12,8 +20,14 @@ function Homepage() {
 
     const hash = location.hash;
 
-    if (hash === "#about") {
+    if (hash === "#home") {
+      homeRef.current?.scrollIntoView({ behaviour: "smooth" });
+    } else if (hash === "#about") {
       aboutRef.current?.scrollIntoView({ behaviour: "smooth" });
+    } else if (hash === "#services") {
+      servicesRef.current?.scrollIntoView({ behaviour: "smooth" });
+    } else if (hash === "#testimonies") {
+      testimoniesRef.current?.scrollIntoView({ behaviour: "smooth" });
     } else if (hash === "#contact") {
       contactRef.current?.scrollIntoView({ behaviour: "smooth" });
     }
@@ -21,11 +35,11 @@ function Homepage() {
 
   return (
     <>
-      <section>Hero Barner</section>
-      <section ref={aboutRef}>About Us</section>
-      <section ref={aboutRef}>Services</section>
-      <section ref={aboutRef}>Testimonies</section>
-      <section ref={contactRef}>Contact</section>
+      <Home ref={homeRef} />
+      <AboutUs />
+      <Services />
+      <Testimonies />
+      <Contact />
     </>
   );
 }
