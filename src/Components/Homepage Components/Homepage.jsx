@@ -6,7 +6,7 @@ import AboutUs from "./AboutUs";
 import Services from "./Services";
 import Testimonies from "./Testimonies";
 import Contact from "./Contact";
-import Nav from "./Nav-Footer Components/Nav";
+import Nav from "./Nav";
 
 function Homepage() {
   return (

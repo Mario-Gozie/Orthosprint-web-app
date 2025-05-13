@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
-function LoginButtton() {
+function LoginButton() {
   return (
     <div>
       <ArrowRight />
@@ -10,4 +10,4 @@ function LoginButtton() {
   );
 }
 
-export default LoginButtton;
+export default LoginButton;
