@@ -3,7 +3,7 @@ import LoginButton from "./LoginButton";
 
 function Nav() {
   return (
-    <nav className="Nav">
+    <nav className="nav">
       <div>Logo</div>
       <LoginButton />
     </nav>
