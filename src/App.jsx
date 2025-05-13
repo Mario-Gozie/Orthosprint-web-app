@@ -4,8 +4,6 @@ import "./App.css";
 import Homepage from "./Components/Homepage Components/Homepage";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <Router>
       <Homepage />
