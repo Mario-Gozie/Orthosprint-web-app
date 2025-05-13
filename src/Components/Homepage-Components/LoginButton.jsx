@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRightCircle, ChevronRight } from "lucide-react";
 
 function LoginButton() {
   return (
@@ -14,7 +14,7 @@ function LoginButton() {
         borderRadius: "25px",
       }}
     >
-      <ArrowRight />
+      <ChevronRight background="white" strokeWidth={3} />
       <p>Get in touch</p>
     </div>
   );
