@@ -1,7 +1,11 @@
 import React from "react";
 
 function Testimonies() {
-  return <section id="testimonies">Testimonie</section>;
+  return (
+    <section style={{ height: "100vh" }} id="testimonies">
+      Testimonies
+    </section>
+  );
 }
 
 export default Testimonies;

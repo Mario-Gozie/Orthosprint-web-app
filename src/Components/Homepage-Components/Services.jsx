@@ -1,7 +1,11 @@
 import React from "react";
 
 function Services() {
-  return <section id="services">Services</section>;
+  return (
+    <section style={{ height: "100vh" }} id="services">
+      Services
+    </section>
+  );
 }
 
 export default Services;

@@ -2,7 +2,11 @@ import "./App.css";
 import Homepage from "./Components/Homepage-Components/Homepage";
 
 function App() {
-  return <Homepage />;
+  return (
+    <>
+      <Homepage />;
+    </>
+  );
 }
 
 export default App;
