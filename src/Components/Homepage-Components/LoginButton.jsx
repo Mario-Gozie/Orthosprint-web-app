@@ -28,7 +28,7 @@ function LoginButton() {
             marginLeft: "0.2rem",
           }}
         >
-          <ChevronRight background="white" />
+          <ChevronRight background="white" color="black" />
         </div>
         <p style={{ color: "white", marginRight: "0.8rem" }}>Get in touch</p>
       </div>
