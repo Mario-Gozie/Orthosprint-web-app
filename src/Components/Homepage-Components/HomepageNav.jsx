@@ -1,5 +1,5 @@
 import React from "react";
-import { forwardRef } from "react";
+
 function HomepageNav() {
   return (
     <nav>
