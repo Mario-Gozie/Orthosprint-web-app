@@ -1,4 +1,5 @@
 import React from "react";
+import navItems from "../../Data/jsonData/navItems.json";
 import { Link } from "react-scroll";
 import LoginButton from "./LoginButton";
 import HamburgerMenu from "./Hamburger";
@@ -16,18 +17,18 @@ function Nav() {
           display: "flex",
         }}
       >
-        {["about", "services", "testimonies", "contact"].map((item) => (
-          <li key={item} className="Nav-item">
+        {navItems.map((item, index) => (
+          <li key={`${item.path}-${index}`} className="Nav-item">
             <Link
               className="Nav-link"
-              to={item}
+              to={item.path}
               spy={true}
               smooth={true}
               offset={-100}
               duration={500}
               activeClass="active"
             >
-              {item}
+              {item.label}
             </Link>
           </li>
         ))}
