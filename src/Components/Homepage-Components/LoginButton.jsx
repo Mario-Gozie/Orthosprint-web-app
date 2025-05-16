@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function LoginButton() {
   return (
-    <Link to="/admin" style={{ textDecoration: "none" }}>
+    <Link className="loginLink" to="/admin" style={{ textDecoration: "none" }}>
       <div
         style={{
           width: "9rem",

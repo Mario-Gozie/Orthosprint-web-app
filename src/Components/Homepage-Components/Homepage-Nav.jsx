@@ -12,10 +12,11 @@ function Nav() {
       </Link>
 
       <ul
-        style={{
-          listStyle: "none",
-          display: "flex",
-        }}
+        className="navListContainer"
+        // style={{
+        //   listStyle: "none",
+        //   display: "flex",
+        // }}
       >
         {navItems.map((item, index) => (
           <li key={`${item.path}-${index}`} className="Nav-item">

@@ -5,11 +5,16 @@ import { useState } from "react";
 function HamburgerMenu() {
   const [open, setOpen] = useState(false);
   return (
-    <>
-      <Hamburger size={24} toggled={open} toggle={setOpen} />
+    <div className="hamburger-container">
+      <Hamburger
+        size={24}
+        toggled={open}
+        toggle={setOpen}
+        className="hamburger-icon"
+      />
 
-      {open && <div>menu</div>}
-    </>
+      {/* {open && <div>menu</div>} */}
+    </div>
   );
 }
 
