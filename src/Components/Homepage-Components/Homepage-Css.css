@@ -1,21 +1,41 @@
+:root {
+  --offWihite-color: #ecf0f1;
+  --background-Black-color: #121212;
+  --text-color: #1a1a1a;
+}
+
 nav {
   position: sticky;
   top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
 }
 
 .Nav-item {
-  margin: 0 1rem;
+  padding: 0 1rem;
+  border-radius: 5px;
+}
+
+.Nav-link {
+  display: block;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .Nav-item:hover {
   cursor: pointer;
+  background: var(--offWihite-color);
 }
 
 .Nav-item a.active {
   padding-bottom: 12px;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid var(--background-Black-color);
   cursor: grabbing;
 }
+
 .menu {
   display: flex;
   position: absolute;
@@ -25,10 +45,4 @@ nav {
   justify-content: space-between;
   width: 2.25rem;
   height: 2rem;
-}
-
-nav .menu span {
-  height: 0.4rem;
-  background-color: red;
-  border-radius: 0.2rem;
 }
