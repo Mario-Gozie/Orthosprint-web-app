@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-scroll";
 import LoginButton from "./LoginButton";
+import HamburgerMenu from "./Hamburger";
 
 function Nav() {
   return (
@@ -33,6 +34,7 @@ function Nav() {
       </ul>
 
       <LoginButton />
+      <HamburgerMenu />
     </nav>
   );
 }
