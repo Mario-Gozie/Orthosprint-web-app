@@ -7,9 +7,14 @@ nav {
   margin: 0 1rem;
 }
 
+.Nav-item:hover {
+  cursor: pointer;
+}
+
 .Nav-item a.active {
   padding-bottom: 12px;
   border-bottom: 3px solid black;
+  cursor: grabbing;
 }
 .menu {
   display: flex;
