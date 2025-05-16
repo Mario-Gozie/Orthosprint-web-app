@@ -1,0 +1,29 @@
+nav {
+  position: sticky;
+  top: 0;
+}
+
+.Nav-item {
+  margin: 0 1rem;
+}
+
+.Nav-item a.active {
+  padding-bottom: 12px;
+  border-bottom: 3px solid black;
+}
+.menu {
+  display: flex;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.25rem;
+  height: 2rem;
+}
+
+nav .menu span {
+  height: 0.4rem;
+  background-color: red;
+  border-radius: 0.2rem;
+}

@@ -6,7 +6,8 @@ import AboutUs from "./AboutUs";
 import Services from "./Services";
 import Testimonies from "./Testimonies";
 import Contact from "./Contact";
-import Nav from "./Nav";
+import Nav from "./Homepage-Nav";
+import "./Homepage-Css.css";
 
 function Homepage() {
   return (
