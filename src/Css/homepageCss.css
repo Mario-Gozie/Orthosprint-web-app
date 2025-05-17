@@ -14,9 +14,14 @@ nav {
   margin: 0.5rem;
 }
 
-.navListContainer {
+.navLists {
   display: none;
 }
+
+/* .hamListContainer,
+.hamLists {
+  display: flex;
+} */
 
 .Nav-item {
   padding: 0 1rem;
@@ -48,10 +53,14 @@ nav {
   display: flex;
 }
 
+.hamMenu {
+  display: flex;
+}
+
 @media (min-width: 769px) {
-  .navListContainer {
-    list-style: none;
+  .navLists {
     display: flex;
+    list-style: none;
   }
 
   .loginLink {

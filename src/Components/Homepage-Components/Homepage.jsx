@@ -6,7 +6,7 @@ import AboutUs from "./AboutUs";
 import Services from "./Services";
 import Testimonies from "./Testimonies";
 import Contact from "./Contact";
-import Nav from "./Homepage-Nav";
+import Nav from "./HomepageNav";
 import "C:/Users/MarioGozie/Desktop/orthosprint-web-app/src/Css/homepageCss.css";
 
 function Homepage() {

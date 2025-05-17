@@ -1,23 +1,11 @@
 import React from "react";
 import navItems from "../../Data/jsonData/navItems.json";
 import { Link } from "react-scroll";
-import LoginButton from "./LoginButton";
-import HamburgerMenu from "./Hamburger";
 
-function Nav() {
+function HomePageNavItems() {
   return (
-    <nav className="nav">
-      <Link href="/" className="logo">
-        <div>Logo</div>
-      </Link>
-
-      <ul
-        className="navListContainer"
-        // style={{
-        //   listStyle: "none",
-        //   display: "flex",
-        // }}
-      >
+    <div className="navListContainer hamListContainer">
+      <ul className="navLists hamLists">
         {navItems.map((item, index) => (
           <li key={`${item.path}-${index}`} className="Nav-item">
             <Link
@@ -34,11 +22,8 @@ function Nav() {
           </li>
         ))}
       </ul>
-
-      <LoginButton />
-      <HamburgerMenu />
-    </nav>
+    </div>
   );
 }
 
-export default Nav;
+export default HomePageNavItems;
