@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 function HomePageNavItems() {
   return (
     <div className="navListContainer hamListContainer">
-      <ul className="navLists hamLists">
+      <ul className="navList hamList">
         {navItems.map((item, index) => (
           <li key={`${item.path}-${index}`} className="Nav-item">
             <Link

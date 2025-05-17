@@ -14,13 +14,17 @@ nav {
   margin: 0.5rem;
 }
 
-.navLists {
+.navList {
   display: none;
 }
 
-/* .hamListContainer,
-.hamLists {
+/* .hamListContainer {
   display: flex;
+}
+
+.hamList {
+  display: flex;
+  flex-direction: column;
 } */
 
 .Nav-item {
@@ -58,7 +62,7 @@ nav {
 }
 
 @media (min-width: 769px) {
-  .navLists {
+  .navList {
     display: flex;
     list-style: none;
   }
