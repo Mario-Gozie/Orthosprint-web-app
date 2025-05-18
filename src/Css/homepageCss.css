@@ -14,6 +14,18 @@ nav {
   margin: 0.5rem;
 }
 
+.logo {
+  cursor: pointer;
+}
+
+.nav .logo.active {
+  cursor: grabbing;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
 .desktop-nav-list {
   list-style: none;
   padding: 0;
@@ -109,7 +121,7 @@ nav {
   }
 
   .desktop-nav-item {
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease;
   }
 
   .desktop-nav-item .nav-link {
@@ -122,9 +134,11 @@ nav {
   .desktop-nav-item .nav-link:not(.active):hover {
     transform: scale(1.05);
     background-color: var(--offWihite-color);
+    cursor: pointer;
   }
 
   .desktop-nav-item .active {
+    cursor: grabbing;
     border-bottom: 3px solid var(--background-Black-color);
   }
 

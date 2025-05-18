@@ -7,7 +7,15 @@ import HamburgerMenu from "./Hamburger";
 function Nav() {
   return (
     <nav className="nav">
-      <Link href="/" className="logo">
+      <Link
+        to="home"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+        activeClass="active"
+        className="logo"
+      >
         <div>Logo</div>
       </Link>
       {/* Desktop navigation */}
