@@ -1,32 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-scroll";
 import Hamburger from "hamburger-react";
-import { useState } from "react";
-import HomePageNavItems from "./HomePageNavItems";
+import navItems from "../../Data/jsonData/navItems.json";
 import LoginButton from "./LoginButton";
 
 function HamburgerMenu() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <div className="hamburger-container">
+      {/* Hamburger icon button */}
       <Hamburger
         size={24}
-        toggled={open}
+        toggled={isOpen}
         toggle={setOpen}
         className="hamburger-icon"
       />
 
-      {open && (
-        <div className="HamMenu">
-          <div>Hello</div>
-          <HomePageNavItems
-            className="HamNavItems"
-            style={{ display: "flex" }}
-          />
-          <LoginButton className="HamLogin" style={{ display: "flex" }} />
+      {/* Mobile menu that appears when hamburger is clicked */}
+      {isOpen && (
+        <div className="mobile-menu">
+          <ul className="mobile-nav-list">
+            {navItems.map((item) => (
+              <li key={item.path} className="mobile-nav-item">
+                <Link
+                  to={item.path}
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  activeClass="active"
+                  onClick={() => setOpen(false)} // Close menu when item is clicked
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <LoginButton className="mobile-login-btn" />
         </div>
       )}
-
-      {open && <div>menu</div>}
     </div>
   );
 }

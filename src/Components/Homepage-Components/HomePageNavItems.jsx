@@ -1,28 +1,28 @@
 import React from "react";
-import navItems from "../../Data/jsonData/navItems.json";
 import { Link } from "react-scroll";
+import navItems from "../../Data/jsonData/navItems.json";
 
 function HomePageNavItems() {
   return (
-    <div className="navListContainer hamListContainer">
-      <ul className="navList hamList">
-        {navItems.map((item, index) => (
-          <li key={`${item.path}-${index}`} className="Nav-item">
+    <nav className="desktop-nav">
+      <ul className="desktop-nav-list">
+        {navItems.map((item) => (
+          <li key={item.path} className="desktop-nav-item">
             <Link
-              className="Nav-link"
               to={item.path}
               spy={true}
               smooth={true}
               offset={-100}
               duration={500}
               activeClass="active"
+              className="nav-link"
             >
               {item.label}
             </Link>
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 }
 

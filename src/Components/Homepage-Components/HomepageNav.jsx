@@ -10,8 +10,13 @@ function Nav() {
       <Link href="/" className="logo">
         <div>Logo</div>
       </Link>
+      {/* Desktop navigation */}
       <HomePageNavItems />
-      <LoginButton />
+
+      {/* Desktop login button */}
+      <LoginButton className="desktop-login-btn" />
+
+      {/* Mobile hamburger menu - will show on smaller screens */}
       <HamburgerMenu />
     </nav>
   );
