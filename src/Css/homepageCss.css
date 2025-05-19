@@ -18,6 +18,11 @@ nav {
   cursor: pointer;
 }
 
+.text-logo {
+  display: inline-block; /* Required for transforms */
+  will-change: transform, opacity; /* Performance optimization */
+}
+
 .nav .logo.active {
   cursor: grabbing;
 }

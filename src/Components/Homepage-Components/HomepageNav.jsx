@@ -1,10 +1,24 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import HomePageNavItems from "./HomePageNavItems";
 import LoginButton from "./LoginButton";
+import { useSpring, animated } from "react-spring";
 import HamburgerMenu from "./Hamburger";
 
 function Nav() {
+  const [animReady, setAnimReady] = useState(false);
+
+  useEffect(() => {
+    setAnimReady(true);
+  }, []);
+
+  const logoProps = useSpring({
+    from: animReady ? { opacity: 0, transform: "translateX(-100px)" } : {},
+    to: animReady ? { opacity: 1, transform: "translateX(0px)" } : {},
+    config: { tension: 120, friction: 20, mass: 1 },
+    delay: 300,
+  });
+
   return (
     <nav className="nav">
       <Link
@@ -16,7 +30,10 @@ function Nav() {
         activeClass="active"
         className="logo"
       >
-        <div>Logo</div>
+        <animated.div style={logoProps} className="text-logo">
+          orthosprint
+        </animated.div>
+        {/* <div>Logo</div> */}
       </Link>
       {/* Desktop navigation */}
       <HomePageNavItems />
