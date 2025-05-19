@@ -104,6 +104,33 @@ nav {
   margin: 0.5rem auto;
 }
 
+/* Home */
+
+#home {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  background-image: url("path/to/your/image.jpg"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.text {
+  position: relative;
+  color: white; /* Text color */
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%); /* Center the text vertically */
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .desktop-nav {
