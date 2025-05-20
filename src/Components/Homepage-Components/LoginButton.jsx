@@ -54,7 +54,7 @@ function LoginButton({ className = "" }) {
     >
       <div className="button-container">
         <div className="icon-circle">
-          <ChevronRight background="white" color="black" />
+          <ChevronRight className="ChevronRight" />
         </div>
         <p className="button-text">Get in touch</p>
       </div>

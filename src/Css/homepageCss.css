@@ -1,8 +1,8 @@
 :root {
   --offWihite-color: #ecf0f1;
-  --background-Black-color: #121212;
-  --text-color: #1a1a1a;
-  width: inherit;
+  --text-color: #2c3e50;
+  --background-Black-color: #3498db;
+  --white-color: #ffffff;
 }
 
 nav {
@@ -11,10 +11,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5rem;
+  /* padding: 0.1rem 0; */
+  z-index: 3;
+  background-color: var(--white-color);
 }
 
 .logo {
+  margin-left: 0.5rem;
   cursor: pointer;
 }
 
@@ -51,7 +54,7 @@ nav {
 
 .mobile-nav-list {
   list-style: none;
-  padding: 0;
+  padding: 0rem 1rem;
   margin: 0;
 }
 
@@ -59,16 +62,25 @@ nav {
   padding: 0.5rem 0;
 }
 
+.mobile-login-btn {
+  margin-left: 0.5rem;
+}
+
 /* Base button styles */
 .login-button {
   display: inline-block;
 }
 
+.ChevronRight {
+  background-color: var();
+  color: var(--text-color);
+}
+
 .button-container {
   width: 9rem;
   height: 2.7rem;
-  margin: 0.5rem 0;
-  background: black;
+  margin: 0.5rem 0.5rem;
+  background: var(--background-Black-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,6 +90,7 @@ nav {
 
 .login-button:hover .button-container {
   transform: scale(1.05);
+  /* margin-left: 1rem; */
 }
 
 .icon-circle {
@@ -92,7 +105,7 @@ nav {
 }
 
 .button-text {
-  color: white;
+  color: var(--white-color);
   margin-right: 0.8rem;
   font-size: 0.9rem;
 }
@@ -109,9 +122,10 @@ nav {
 #home {
   position: relative;
   height: 100vh; /* Full viewport height */
-  background-image: url("path/to/your/image.jpg"); /* Replace with your image path */
+  background-image: url("../assets/homepageImage.jpg"); /* Replace with your image path */
   background-size: cover;
   background-position: center;
+  margin: 0rem 0.1rem;
 }
 
 .overlay {
@@ -120,7 +134,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
 }
 
 .text {
