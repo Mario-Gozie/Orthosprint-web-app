@@ -36,7 +36,7 @@ function Nav() {
         {/* <div>Logo</div> */}
       </Link>
       {/* Desktop navigation */}
-      <HomePageNavItems />
+      <HomePageNavItems type="desktop" activeClass="active" />
 
       {/* Desktop login button */}
       <LoginButton className="desktop-login-btn" />

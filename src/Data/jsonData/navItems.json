@@ -1,4 +1,5 @@
 [
+  { "path": "home", "label": "HOME" },
   { "path": "about", "label": "ABOUT" },
   { "path": "services", "label": "SERVICES" },
   { "path": "testimonies", "label": "TESTIMONIES" },

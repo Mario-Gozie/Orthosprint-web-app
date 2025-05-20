@@ -15,7 +15,7 @@ function FooterAbout() {
         {socialmedia.map((social) => {
           const Icon = Icons[social.icon];
           return (
-            <li key={social.name}>
+            <li key={social.name} className="social-media">
               <a
                 href={social.url}
                 aria-label={`${social.name} (opens in new tab)`}
