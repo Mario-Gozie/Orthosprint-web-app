@@ -1,7 +1,7 @@
 :root {
   --offWihite-color: #ecf0f1;
   --text-color: #2c3e50;
-  --background-Black-color: #3498db;
+  --background-blue-color: #3498db;
   --white-color: #ffffff;
   --inactive-social: #555;
 }
@@ -81,7 +81,7 @@ nav {
   width: 9rem;
   height: 2.7rem;
   margin: 0.5rem 0.5rem;
-  background: var(--background-Black-color);
+  background: var(--background-blue-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -169,6 +169,21 @@ nav {
   transform: scale(1.1); /* Optional: slight zoom effect */
 }
 
+.Quicklink-nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+.Quicklink-nav-item {
+  cursor: pointer;
+}
+
+.Quicklink-nav-item:active {
+  color: var(--background-Black-color); /* Color on click */
+  transform: scale(0.95); /* Scale down */
+  transition: transform 0.1s ease; /* Quick scale transition */
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .desktop-nav {
@@ -212,7 +227,7 @@ nav {
 
   .desktop-nav-item .active {
     cursor: grabbing;
-    border-bottom: 3px solid var(--background-Black-color);
+    border-bottom: 3px solid var(--background-blue-color);
   }
 
   .hamburger-container {

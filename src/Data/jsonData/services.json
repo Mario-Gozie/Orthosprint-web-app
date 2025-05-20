@@ -1,0 +1,32 @@
+[
+  {
+    "service": "Custom Prosthtics",
+    "icon": "",
+    "description": "Personalized artificial limbs designed for comfort, functionality, and aesthetics, helping you regain independence and confidence."
+  },
+  {
+    "service": "Orthotic Devices",
+    "icon": "",
+    "description": "Specialized braces and supports that improve function, correct alignment, and provide stability for various conditions."
+  },
+  {
+    "service": "Pediatric Care",
+    "icon": "",
+    "description": "Gentle, expert care for children with prosthetic and orthotic needs, supporting their growth and development."
+  },
+  {
+    "service": "3D Scanning Technology",
+    "icon": "",
+    "description": "State-of-the-art digital scanning for precise measurements and optimal fit of your prosthetic or orthotic device."
+  },
+  {
+    "service": "Rehabilitation Support",
+    "icon": "",
+    "description": "Comprehensive training and ongoing support to help you adapt to your new device and maximize its benefits."
+  },
+  {
+    "service": "Maintenance & Adjustments",
+    "icon": "",
+    "description": "Regular check-ups and adjustments to ensure your device continues to provide optimal comfort and function."
+  }
+]
