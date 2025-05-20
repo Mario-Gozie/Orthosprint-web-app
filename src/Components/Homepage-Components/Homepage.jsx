@@ -8,7 +8,6 @@ import Testimonies from "./Testimonies";
 import Contact from "./Contact";
 import Nav from "./HomepageNav";
 import Footer from "./Footer";
-
 import "../../Css/homepageCss.css";
 
 function Homepage() {
