@@ -1,0 +1,18 @@
+{
+  "companyName": "Orthosprint Prosthetics & Orthotics",
+  "address": {
+    "street": "123 Health Avenue",
+    "district": "Medical District",
+    "city": "City",
+    "state": "State",
+    "zipCode": "12345"
+  },
+  "contact": {
+    "phone": "(555) 123-4567",
+    "email": "info@advancedprosthetics.com"
+  },
+  "hoursOfOperation": {
+    "days": "Mon-Fri",
+    "time": "8:00 AM - 5:00 PM"
+  }
+}
