@@ -169,7 +169,8 @@ nav {
   transform: scale(1.1); /* Optional: slight zoom effect */
 }
 
-.Quicklink-nav-list {
+.Quicklink-nav-list,
+.service-list {
   list-style: none;
   padding: 0;
 }
