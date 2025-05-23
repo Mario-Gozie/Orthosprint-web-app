@@ -9,7 +9,7 @@ function FooterServices() {
       <ul className="service-list">
         {services.map((service, index) => {
           return (
-            <li key={`service-${index}`}>
+            <li key={`service-${index}`} className="service-item">
               <Link
                 to="services"
                 spy={true}

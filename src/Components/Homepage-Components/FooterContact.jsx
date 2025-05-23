@@ -7,16 +7,16 @@ function FooterContact() {
       <h2 className="footer-contact-header">Contact Us</h2>
 
       <div>
-        <p>
+        <p className="contact-item">
           {contact.address.street}, {contact.address.district}
         </p>
-        <p>
+        <p className="contact-item">
           {contact.address.city}, {contact.address.state}{" "}
           {contact.address.zipCode}
         </p>
-        <p>Phone: {contact.contact.phone}</p>
-        <p>Email: {contact.contact.email}</p>
-        <p>
+        <p className="contact-item">Phone: {contact.contact.phone}</p>
+        <p className="contact-item">Email: {contact.contact.email}</p>
+        <p className="contact-item">
           {contact.hoursOfOperation.days}: {contact.hoursOfOperation.time}
         </p>
       </div>

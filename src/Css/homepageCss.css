@@ -233,6 +233,7 @@ footer h2::after {
   color: var(--hover-color); /* Uses the dynamically passed color */
   transform: scale(1.1); /* Optional: slight zoom effect */
 }
+
 .Quicklink-nav {
   display: flex;
   z-index: 1;
@@ -241,10 +242,17 @@ footer h2::after {
   background-color: inherit;
 }
 
+.service-item,
+.Quicklink-nav-item,
+.contact-item {
+  margin-bottom: 0.5rem;
+}
+
 .Quicklink-nav-list,
 .service-list {
   list-style: none;
-  padding: 0;
+  margin: 0;
+  padding: 0rem;
 }
 
 .Quicklink-nav-item {
