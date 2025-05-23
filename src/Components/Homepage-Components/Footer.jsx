@@ -16,11 +16,11 @@ function Footer() {
           <FooterServices />
           <FooterContact />
         </div>
-        <hr className="horizontal-line" />
-        <p className="copy-right-text">
-          &copy; {currentYear} {contact.companyName}. All Rights Reserved
-        </p>
       </div>
+      <hr className="horizontal-line" />
+      <p className="copy-right-text">
+        &copy; {currentYear} {contact.companyName}. All Rights Reserved
+      </p>
     </footer>
   );
 }

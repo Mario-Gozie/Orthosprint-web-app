@@ -170,8 +170,9 @@ nav {
 footer {
   width: 100%;
   background-color: var(--footer-background);
-  /* color: var(--offWihite-color); */
+  color: var(--offWihite-color);
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
