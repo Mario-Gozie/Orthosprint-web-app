@@ -4,8 +4,8 @@ import { Link } from "react-scroll";
 
 function FooterServices() {
   return (
-    <div>
-      <h2>Services</h2>
+    <div className="footer-services-container">
+      <h2 className="footer-services-header">Services</h2>
       <ul className="service-list">
         {services.map((service, index) => {
           return (
