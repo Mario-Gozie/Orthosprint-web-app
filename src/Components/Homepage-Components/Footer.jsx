@@ -8,7 +8,7 @@ import contact from "../../Data/jsonData/contact.json";
 function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <section className="footer-section">
+    <footer className="footer-section">
       <div className="footer-container">
         <div>
           <FooterAbout />
@@ -21,7 +21,7 @@ function Footer() {
           &copy; {currentYear} {contact.companyName}. All Rights Reserved
         </p>
       </div>
-    </section>
+    </footer>
   );
 }
 
