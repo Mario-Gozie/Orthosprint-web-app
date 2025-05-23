@@ -165,6 +165,60 @@ nav {
   transform: translateY(-50%); /* Center the text vertically */
 }
 
+/* SERVICES REGION */
+
+#services {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-container {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-text,
+.services-card-container {
+  width: 100%;
+  text-align: center;
+}
+
+.services-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 20px;
+  padding: 1rem;
+}
+
+.service-card {
+  flex: 1 1 400px; /* flex-grow | flex-shrink | flex-basis */
+  width: 250px; /* Minimum width before wrapping */
+  max-width: 100%; /* Prevent overflow on small screens */
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--offWihite-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container {
+  width: 60px;
+  height: 60px;
+  background: #e6f4ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* FOOTER REGION */
 
 footer {
@@ -173,7 +227,7 @@ footer {
   color: var(--offWihite-color);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 .footer-container {

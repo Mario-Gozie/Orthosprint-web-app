@@ -13,9 +13,8 @@ function Services() {
             your specific needs.
           </p>
         </div>
-        <div className="services-card-container">
-          <ServicesCards />
-        </div>
+
+        <ServicesCards />
       </div>
     </section>
   );
