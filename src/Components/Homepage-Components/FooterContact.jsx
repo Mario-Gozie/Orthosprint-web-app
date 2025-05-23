@@ -3,8 +3,8 @@ import contact from "../../Data/jsonData/contact.json";
 
 function FooterContact() {
   return (
-    <div>
-      <h2>Contact Us</h2>
+    <div className="footer-contact-container">
+      <h2 className="footer-contact-header">Contact Us</h2>
 
       <div>
         <p>
