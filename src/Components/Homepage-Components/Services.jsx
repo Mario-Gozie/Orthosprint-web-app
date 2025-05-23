@@ -3,7 +3,7 @@ import ServicesCards from "./ServicesCards";
 
 function Services() {
   return (
-    <section style={{ height: "100vh" }} id="services">
+    <section id="services">
       {" "}
       <div className="services-container">
         <div className="services-text">

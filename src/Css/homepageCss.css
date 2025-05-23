@@ -66,6 +66,12 @@ nav {
   z-index: 10;
 }
 
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  flex-direction: flex start;
+}
+
 .mobile-nav-list {
   list-style: none;
   padding: 0rem 1rem;
@@ -225,9 +231,6 @@ footer h2 {
 
   .navLoginLink {
     display: none;
-  }
-  .hello {
-    display: flex;
   }
 }
 
