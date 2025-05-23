@@ -142,19 +142,10 @@ nav {
 #home {
   position: relative;
   height: 100vh; /* Full viewport height */
-  background-image: url("../assets/homepageImage.jpg"); /* Replace with your image path */
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   background-size: cover;
   background-position: center;
   margin: 0rem 0.1rem;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
 }
 
 .text {
@@ -207,6 +198,12 @@ nav {
   align-items: center;
   background: var(--offWihite-color);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .icon-container {
@@ -233,7 +230,6 @@ footer {
 .footer-container {
   width: 100%;
   max-width: 1440px;
-  padding: 0 0.3rem;
 }
 
 .footer-wrapper {
@@ -249,6 +245,7 @@ footer {
   flex: 1; /* All items grow equally to fill space */
   min-width: 200px; /* Minimum width before wrapping */
   max-width: 100%; /* Prevent overflow (optional) */
+  margin: 0 0.5rem;
 }
 
 footer h2 {
@@ -326,6 +323,8 @@ footer h2::after {
 }
 .copy-right-text {
   text-align: center;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 /* Responsive adjustments */
