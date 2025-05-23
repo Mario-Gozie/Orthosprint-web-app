@@ -5,9 +5,9 @@ import socialmedia from "../../Data/jsonData/socialmedia.json";
 
 function FooterAbout() {
   return (
-    <div>
-      <h2>About Us</h2>
-      <p>
+    <div className="footer-about-container">
+      <h2 className="footer-about-header">About Us</h2>
+      <p className="footer-about-paragraph">
         Orthosprint Prosthetics and orthothics is dedicated to improving lives
         through inovatiive mobility solutions and compasionate care.
       </p>
