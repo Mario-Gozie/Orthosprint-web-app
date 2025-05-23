@@ -21,28 +21,30 @@ function Nav() {
 
   return (
     <nav className="nav">
-      <Link
-        to="home"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-        activeClass="active"
-        className="logo"
-      >
-        <animated.div style={logoProps} className="text-logo">
-          orthosprint
-        </animated.div>
-        {/* <div>Logo</div> */}
-      </Link>
-      {/* Desktop navigation */}
-      <HomePageNavItems type="desktop" activeClass="active" />
+      <div className="nav-container">
+        <Link
+          to="home"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          activeClass="active"
+          className="logo"
+        >
+          <animated.div style={logoProps} className="text-logo">
+            orthosprint
+          </animated.div>
+          {/* <div>Logo</div> */}
+        </Link>
+        {/* Desktop navigation */}
+        <HomePageNavItems type="desktop" activeClass="active" />
 
-      {/* Desktop login button */}
-      <LoginButton className="desktop-login-btn" />
+        {/* Desktop login button */}
+        <LoginButton className="desktop-login-btn" />
 
-      {/* Mobile hamburger menu - will show on smaller screens */}
-      <HamburgerMenu />
+        {/* Mobile hamburger menu - will show on smaller screens */}
+        <HamburgerMenu />
+      </div>
     </nav>
   );
 }

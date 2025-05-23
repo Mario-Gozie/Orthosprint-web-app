@@ -8,17 +8,19 @@ import contact from "../../Data/jsonData/contact.json";
 function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <section>
-      <div>
-        <FooterAbout />
-        <FooterQuickLink />
-        <FooterServices />
-        <FooterContact />
+    <section className="footer-section">
+      <div className="footer-container">
+        <div>
+          <FooterAbout />
+          <FooterQuickLink />
+          <FooterServices />
+          <FooterContact />
+        </div>
+        <hr />
+        <p>
+          &copy; {currentYear} {contact.companyName}. All Rights Reserved
+        </p>
       </div>
-      <hr />
-      <p>
-        &copy; {currentYear} {contact.companyName}. All Rights Reserved
-      </p>
     </section>
   );
 }

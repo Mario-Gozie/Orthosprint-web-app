@@ -5,14 +5,18 @@ function Services() {
   return (
     <section style={{ height: "100vh" }} id="services">
       {" "}
-      <div>
-        <h2>Our Specialized Services</h2>
-        <p>
-          We offer comprehensive care and cutting-edge solutions tailored to
-          your specific needs.
-        </p>
+      <div className="services-container">
+        <div className="services-text">
+          <h2>Our Specialized Services</h2>
+          <p>
+            We offer comprehensive care and cutting-edge solutions tailored to
+            your specific needs.
+          </p>
+        </div>
+        <div className="services-card-container">
+          <ServicesCards />
+        </div>
       </div>
-      <ServicesCards />
     </section>
   );
 }
