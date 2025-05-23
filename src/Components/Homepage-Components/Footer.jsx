@@ -10,14 +10,14 @@ function Footer() {
   return (
     <footer className="footer-section">
       <div className="footer-container">
-        <div>
+        <div className="footer-wrapper">
           <FooterAbout />
           <FooterQuickLink />
           <FooterServices />
           <FooterContact />
         </div>
-        <hr />
-        <p>
+        <hr className="horizontal-line" />
+        <p className="copy-right-text">
           &copy; {currentYear} {contact.companyName}. All Rights Reserved
         </p>
       </div>

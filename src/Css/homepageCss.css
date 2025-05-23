@@ -168,20 +168,48 @@ nav {
 /* FOOTER REGION */
 
 footer {
-  width: 100;
+  width: 100%;
   background-color: var(--footer-background);
   /* color: var(--offWihite-color); */
+  display: flex;
+  justify-content: center;
 }
 
-/* footer h2 {
-  content: "";
+.footer-container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 0.3rem;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-about-container,
+.footer-contact-container,
+.footer-quicklink-container,
+.footer-services-container {
+  flex: 1; /* All items grow equally to fill space */
+  min-width: 200px; /* Minimum width before wrapping */
+  max-width: 100%; /* Prevent overflow (optional) */
+}
+
+footer h2 {
+  position: relative;
+}
+
+footer h2::after {
+  content: " ";
   position: absolute;
   bottom: -10px;
   left: 0;
   width: 50px;
-  height: 2px;
+  height: 3px;
   background-color: #3498db;
-} */
+  color: #3498db;
+}
 
 .social-media-icons-container {
   display: flex;
@@ -227,6 +255,14 @@ footer {
   color: var(--background-Black-color); /* Color on click */
   transform: scale(0.95); /* Scale down */
   transition: transform 0.1s ease; /* Quick scale transition */
+}
+.horizontal-line {
+  background: #333;
+  align-self: center;
+  width: 95%;
+}
+.copy-right-text {
+  text-align: center;
 }
 
 /* Responsive adjustments */
