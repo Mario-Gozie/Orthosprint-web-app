@@ -172,6 +172,37 @@ nav {
   transform: translateY(-50%); /* Center the text vertically */
 }
 
+.consultation-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--offWihite-color);
+  border-radius: 50%;
+}
+
+.straight-line {
+  width: 5rem;
+  height: 3px;
+  background-color: var(--offWihite-color);
+}
+
+.consultation-button {
+  background: inherit;
+  border: 3px var(--offWihite-color) solid;
+  width: 12rem;
+  height: 3rem;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+}
+
 /* SERVICES REGION */
 
 #services {
