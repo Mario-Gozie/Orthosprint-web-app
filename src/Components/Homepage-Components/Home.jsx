@@ -1,5 +1,7 @@
 import React from "react";
+
 import { BsArrowUpRightCircle } from "react-icons/bs";
+
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -24,8 +26,14 @@ function Home() {
             <Link to="/admin" className="consultation-button">
               <div className="button-text">Book consultation</div>
               <BsArrowUpRightCircle
-                className="circle-arrow"
-                style={{ fontSize: "32px" }}
+                className="text-yellow-500"
+                style={{
+                  fontSize: "32px",
+                  color: "white",
+                  backgroundColor: "#facc15",
+                  borderRadius: "50%",
+                  padding: "2px",
+                }}
               />
             </Link>
           </div>
