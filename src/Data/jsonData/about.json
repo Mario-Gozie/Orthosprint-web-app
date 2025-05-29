@@ -1,0 +1,30 @@
+{
+  "about_services": {
+    "key_qualities": [
+      {
+        "title": "Bespoke Solutions",
+        "description": "Every device is custom-made to match the patient’s unique anatomy, activity level, and personal preferences."
+      },
+      {
+        "title": "Advanced Technology",
+        "description": "We use 3D scanning, CAD/CAM design, and premium materials for precise, lightweight, and durable devices."
+      },
+      {
+        "title": "Expert Clinical Team",
+        "description": "Our certified prosthetists/orthotists combine years of experience with ongoing training in the latest techniques."
+      },
+      {
+        "title": "Comprehensive Rehabilitation Support",
+        "description": "From fitting to gait training, we provide end-to-end care to maximize mobility and comfort."
+      },
+      {
+        "title": "Patient-Centered Approach",
+        "description": "We listen first, ensuring devices align with lifestyles—whether for daily comfort or high-performance needs."
+      },
+      {
+        "title": "Long-Term Commitment",
+        "description": "Lifelong adjustments, maintenance, and emotional support ensure patients thrive at every stage."
+      }
+    ]
+  }
+}
