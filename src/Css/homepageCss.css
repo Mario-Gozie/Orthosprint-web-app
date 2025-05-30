@@ -236,6 +236,20 @@ nav {
   transition: all 0.3s ease;
 }
 
+.title-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.title-container h3 {
+  width: 80%;
+}
+
+.title-container svg {
+  margin: 0 0.5rem;
+}
+
 .about-service-item.active {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -244,7 +258,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px;
+  padding: 16px 16px;
   background-color: #f8f8f8;
   cursor: pointer;
   transition: background-color 0.2s;

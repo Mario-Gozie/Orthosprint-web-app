@@ -24,8 +24,28 @@ function AboutServiceList() {
             className="about-service-header"
             onClick={() => toggleItem(index)}
           >
-            <h3>{service.title}</h3>
-            {activeIndex === index ? <FiChevronUp /> : <FiChevronDown />}
+            <div className="title-container">
+              <h3>{service.title}</h3>
+              {activeIndex === index ? (
+                <FiChevronUp
+                  style={{
+                    background: "#3498db",
+                    borderRadius: "50%",
+                    width: "25px",
+                    height: "25px",
+                    color: "white",
+                  }}
+                />
+              ) : (
+                <FiChevronDown
+                  style={{
+                    borderRadius: "50%",
+                    width: "25px",
+                    height: "25px",
+                  }}
+                />
+              )}
+            </div>
           </div>
           {activeIndex === index && (
             <div className="service-description">
