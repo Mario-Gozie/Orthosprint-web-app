@@ -203,6 +203,80 @@ nav {
   margin: 0 5px;
 }
 
+/*                            */
+
+#about {
+  height: 100%;
+  width: 100%;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  /* padding: 0 0.5rem; */
+}
+
+.about-special-list {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-text-container,
+.about-img-container {
+  margin: 0 0.5rem;
+}
+
+.about-service-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.about-service-item.active {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.about-service-header:hover {
+  background-color: #f0f0f0;
+}
+
+.about-service-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.service-description {
+  padding: 16px 24px;
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Animation for smooth opening/closing */
+.service-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.about-service-item.active .service-description {
+  max-height: 500px; /* Adjust based on your content */
+}
+
 /* SERVICES REGION */
 
 #services {
@@ -364,11 +438,13 @@ footer h2::after {
   transform: scale(0.95); /* Scale down */
   transition: transform 0.1s ease; /* Quick scale transition */
 }
+
 .horizontal-line {
   background: #333;
   align-self: center;
   width: 95%;
 }
+
 .copy-right-text {
   text-align: center;
   margin: 0;
@@ -387,6 +463,11 @@ footer h2::after {
 
   .navLoginLink {
     display: none;
+  }
+
+  .about-container {
+    display: flex;
+    flex-direction: column;
   }
 }
 
