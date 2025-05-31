@@ -8,8 +8,14 @@ function AboutUs() {
     <section id="about">
       <div className="about-container" style={{ height: "100%" }}>
         <div className="about-img-container">
-          <img className="about-img" src={aboutImg1} alt="" />
-          <img className="about-img" src={aboutImg2} alt="" />
+          <div className="about-image-container-1">
+            <img className="about-img-1" src={aboutImg1} alt="" />
+          </div>
+          <div className="about-svg-container"></div>
+          <div className="about-image-container-2">
+            <img className="about-img-2" src={aboutImg2} alt="" />
+          </div>
+          <div className="about-svg-container"></div>
         </div>
         <div className="about-text-container">
           <h2>About us</h2>
