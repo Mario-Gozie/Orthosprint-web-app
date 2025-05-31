@@ -208,13 +208,28 @@ nav {
 #about {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .about-container {
   width: 100%;
   max-width: 1440px;
   display: flex;
-  /* padding: 0 0.5rem; */
+  flex-direction: column;
+}
+
+.about-img-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.about-img {
+  border-radius: 10px;
+  width: 100px;
+  height: auto;
 }
 
 .about-special-list {
@@ -478,11 +493,6 @@ footer h2::after {
   .navLoginLink {
     display: none;
   }
-
-  .about-container {
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 @media (min-width: 769px) {
@@ -518,5 +528,20 @@ footer h2::after {
   }
   .hamLoginLink {
     display: none;
+  }
+
+  .about-container {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .about-img-container {
+    width: 60%;
+  }
+
+  .about-text-container {
+    width: 40%;
   }
 }
