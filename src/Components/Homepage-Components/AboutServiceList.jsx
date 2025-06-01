@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { about_services } from "../../Data/jsonData/about.json";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
@@ -6,8 +7,6 @@ function AboutServiceList() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleItem = (index) => {
-    // Close all others by setting activeIndex to the clicked index
-    // If clicking the already active item, close it by setting to null
     setActiveIndex(activeIndex === index ? null : index);
   };
 
@@ -34,6 +33,7 @@ function AboutServiceList() {
                     width: "25px",
                     height: "25px",
                     color: "white",
+                    transition: "all 0.5s ease",
                   }}
                 />
               ) : (
@@ -42,16 +42,25 @@ function AboutServiceList() {
                     borderRadius: "50%",
                     width: "25px",
                     height: "25px",
+                    transition: "all 0.5s ease",
                   }}
                 />
               )}
             </div>
           </div>
-          {activeIndex === index && (
-            <div className="service-description">
-              <p>{service.description}</p>
-            </div>
-          )}
+          <AnimatePresence>
+            {activeIndex === index && (
+              <motion.div
+                className="service-description"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <p>{service.description}</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       ))}
     </div>

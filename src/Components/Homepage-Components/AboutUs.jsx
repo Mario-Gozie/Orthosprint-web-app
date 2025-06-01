@@ -6,16 +6,18 @@ import AboutServiceList from "./AboutServiceList";
 function AboutUs() {
   return (
     <section id="about">
-      <div className="about-container" style={{ height: "100%" }}>
-        <div className="about-img-container">
-          <div className="about-image-container-1">
+      <div className="about-container">
+        <div
+          className="about-img-svg-container"
+          style={{ margin: " 0 0.5rem" }}
+        >
+          {/* <div className="images-caontainer">
             <img className="about-img-1" src={aboutImg1} alt="" />
-          </div>
-          <div className="about-svg-container"></div>
-          <div className="about-image-container-2">
             <img className="about-img-2" src={aboutImg2} alt="" />
           </div>
-          <div className="about-svg-container"></div>
+
+          <div className="about-svg-container">Blue</div>
+          <div className="about-svg-container">red</div> */}
         </div>
         <div className="about-text-container">
           <h2>About us</h2>

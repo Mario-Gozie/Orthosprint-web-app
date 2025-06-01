@@ -9,8 +9,10 @@ import Contact from "./Contact";
 import Nav from "./HomepageNav";
 import Footer from "./Footer";
 import "../../Css/homepageCss.css";
+import supabase from "../../config/supabaseClient.js";
 
 function Homepage() {
+  console.log(supabase);
   return (
     <>
       <Nav />

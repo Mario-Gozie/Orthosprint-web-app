@@ -13,7 +13,7 @@ import { Md3dRotation } from "react-icons/md";
 function ServicesCards() {
   // Map each service to an icon component
   const serviceIcons = {
-    "Custom Prosthtics": <FaRobot size={40} color="#3a86ff" />,
+    "Custom Prosthetics": <FaRobot size={40} color="#3a86ff" />,
     "Orthotic Devices": <FaCrutch size={40} color="#3a86ff" />,
     "Pediatric Care": <FaChild size={40} color="#3a86ff" />,
     "3D Scanning Technology": <Md3dRotation size={40} color="#3a86ff" />,
