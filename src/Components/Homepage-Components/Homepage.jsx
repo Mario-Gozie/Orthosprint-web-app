@@ -18,7 +18,7 @@ function Homepage() {
       <Home />
       <AboutUs />
       <Services />
-      <Team />
+      {/* <Team /> */}
       <Testimonies />
       <Contact />
       <Footer />
