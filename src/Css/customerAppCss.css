@@ -13,6 +13,18 @@ body {
   width: inherit;
 }
 
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .welcome-container {
   width: 100%;
 }
@@ -42,4 +54,55 @@ body {
   border-radius: 50%; /* Makes it a circle */
   padding: 2px 6px; /* Spacing around the number */
   font-size: 12px; /* Small text size */
+}
+
+.appointment-card {
+  margin: 0.5rem;
+  border-radius: 15px;
+}
+
+.appointment-blue-bg {
+  background: rgb(72, 72, 167);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: inherit;
+}
+
+.logo-appointment-id {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stetho {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.4rem 0.3rem;
+  border-radius: 12px;
+}
+
+.appointment-id {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.appointment-type-container {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
 }
