@@ -73,11 +73,6 @@ function AppointmentCards() {
           </div>
         </button>
       </div>
-      <div>
-        <button>
-          <FileText /> <p>View Report</p>
-        </button>
-      </div>
     </div>
   );
 }
