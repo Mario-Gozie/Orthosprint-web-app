@@ -51,7 +51,7 @@ function AppointmentCards() {
         </div>
         <div className="appointment-detail-container">
           <div className="detail-icon-cont map-icon-container">
-            <MapPin className="Map-icon" />
+            <MapPin className="map-icon" />
           </div>
           <div className="main-detail">
             <div className="detail-bold">Othosprint clinic</div>

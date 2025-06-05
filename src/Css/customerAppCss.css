@@ -59,6 +59,7 @@ body {
 .appointment-card {
   margin: 0.5rem;
   border-radius: 15px;
+  background-color: white;
 }
 
 .appointment-blue-bg {
@@ -131,13 +132,25 @@ body {
 }
 
 .calendar-icon-container {
-  background-color: hsla(118, 100%, 90%, 0.8);
+  background-color: hsl(151, 81%, 96%);
 }
 
 .clock-icon-container {
-  background-color: hsla(36, 100%, 90%, 0.8);
+  background-color: hsl(48, 100%, 96%);
 }
 
 .map-icon-container {
-  background-color: hsla(291, 100%, 90%, 0.8);
+  background-color: hsl(248, 100%, 98%);
+}
+
+.calendar-icon {
+  color: green;
+}
+
+.clock-icon {
+  color: orange;
+}
+
+.map-icon {
+  color: purple;
 }
