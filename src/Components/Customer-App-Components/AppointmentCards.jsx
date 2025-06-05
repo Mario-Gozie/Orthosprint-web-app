@@ -5,6 +5,7 @@ import {
   X,
   Clock,
   QrCode,
+  FileText,
   User,
   MapPin,
   Stethoscope,
@@ -39,7 +40,7 @@ function AppointmentCards() {
           <Clock />
           <div className="main-detail">
             <div className="detail-bold">2:30 PM</div>
-            <div className="detail-small"></div>
+            <div className="detail-small">EST</div>
           </div>
         </div>
         <div className="location">
@@ -49,7 +50,33 @@ function AppointmentCards() {
             <div className="detail-small">Room 305, Floor 3</div>
           </div>
         </div>
-        <div className="duration"></div>
+      </div>
+      <div>
+        <button>
+          <div>
+            <QrCode />
+            <p>QR code</p>
+          </div>
+        </button>
+        <button>
+          {" "}
+          <div>
+            <RotateCcw />
+            <p>Reschedule</p>
+          </div>
+        </button>
+        <button>
+          {" "}
+          <div>
+            <X />
+            <p>Cancel</p>
+          </div>
+        </button>
+      </div>
+      <div>
+        <button>
+          <FileText /> <p>View Report</p>
+        </button>
       </div>
     </div>
   );
