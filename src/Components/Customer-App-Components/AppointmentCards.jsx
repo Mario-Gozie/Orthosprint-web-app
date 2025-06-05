@@ -32,21 +32,27 @@ function AppointmentCards() {
       </div>
       <div className="main-appointment-detail">
         <div className="appointment-detail-container">
-          <Calendar />
+          <div className="detail-icon-cont calendar-icon-container">
+            <Calendar className="calendar-icon" />
+          </div>
           <div className="main-detail">
             <div className="detail-bold">Jun 15</div>
             <div className="detail-small">2025</div>
           </div>
         </div>
         <div className="appointment-detail-container">
-          <Clock />
+          <div className="detail-icon-cont clock-icon-container">
+            <Clock className="clock-icon" />
+          </div>
           <div className="main-detail">
             <div className="detail-bold">2:30 PM</div>
             <div className="detail-small">EST</div>
           </div>
         </div>
         <div className="appointment-detail-container">
-          <MapPin />
+          <div className="detail-icon-cont map-icon-container">
+            <MapPin className="Map-icon" />
+          </div>
           <div className="main-detail">
             <div className="detail-bold">Othosprint clinic</div>
             <div className="detail-small">Room 305, Floor 3</div>
