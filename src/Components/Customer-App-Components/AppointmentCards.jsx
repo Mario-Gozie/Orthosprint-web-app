@@ -51,28 +51,6 @@ function AppointmentCards() {
           </div>
         </div>
       </div>
-      <div>
-        <button>
-          <div>
-            <QrCode />
-            <p>QR code</p>
-          </div>
-        </button>
-        <button>
-          {" "}
-          <div>
-            <RotateCcw />
-            <p>Reschedule</p>
-          </div>
-        </button>
-        <button>
-          {" "}
-          <div>
-            <X />
-            <p>Cancel</p>
-          </div>
-        </button>
-      </div>
     </div>
   );
 }
