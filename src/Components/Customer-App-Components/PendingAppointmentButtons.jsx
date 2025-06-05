@@ -1,4 +1,5 @@
 import React from "react";
+import { X, QrCode, RotateCcw } from "lucide-react";
 
 function PendingAppointmentButtons() {
   return (

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import PendingAppointmentButtons from "./PendingAppointmentButtons";
+import ViewReportButton from "./ViewReportButton";
 import {
   Calendar,
   X,
@@ -7,6 +8,7 @@ import {
   QrCode,
   FileText,
   User,
+  CheckCircle,
   MapPin,
   Stethoscope,
   RotateCcw,
@@ -29,21 +31,21 @@ function AppointmentCards() {
         </div>
       </div>
       <div className="main-appointment-detail">
-        <div className="appointment-date">
+        <div className="appointment-detail-container">
           <Calendar />
           <div className="main-detail">
             <div className="detail-bold">Jun 15</div>
             <div className="detail-small">2025</div>
           </div>
         </div>
-        <div className="appointment-time">
+        <div className="appointment-detail-container">
           <Clock />
           <div className="main-detail">
             <div className="detail-bold">2:30 PM</div>
             <div className="detail-small">EST</div>
           </div>
         </div>
-        <div className="location">
+        <div className="appointment-detail-container">
           <MapPin />
           <div className="main-detail">
             <div className="detail-bold">Othosprint clinic</div>
