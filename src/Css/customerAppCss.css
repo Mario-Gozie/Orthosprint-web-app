@@ -111,7 +111,7 @@ body {
 .main-appointment-detail {
   padding: 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 0.7rem;
 }
@@ -153,4 +153,9 @@ body {
 
 .map-icon {
   color: purple;
+}
+
+.detail-bold {
+  font-size: 15px;
+  font-weight: bold;
 }
