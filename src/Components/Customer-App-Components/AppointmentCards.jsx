@@ -59,6 +59,7 @@ function AppointmentCards() {
           </div>
         </div>
       </div>
+      <PendingAppointmentButtons />
     </div>
   );
 }

@@ -64,6 +64,7 @@ body {
 
 .appointment-blue-bg {
   background: rgb(72, 72, 167);
+  background: linear-gradient(to top left, #0f4473, #3b9abd);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: inherit;
@@ -158,4 +159,37 @@ body {
 .detail-bold {
   font-size: 15px;
   font-weight: bold;
+}
+
+.pending-buttons-container {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pend-button {
+  width: 6rem;
+  height: 4rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  padding: 0.3rem;
+}
+
+.pend-button p {
+  padding: 0.2rem 0;
+  margin: 0;
+}
+
+.cancel-button {
+  background-color: hsl(0, 24%, 81%);
+}
+
+.reschedule-button {
+  background-color: hsl(30, 25%, 81%);
+}
+
+.QrCode-button {
+  background-color: hsl(213, 22%, 82%);
 }
