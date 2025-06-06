@@ -109,6 +109,29 @@ body {
   border-radius: 12px;
 }
 
+.appointment-type-container {
+  display: grid;
+  grid-template-columns: 2fr 0.5fr;
+}
+
+.honored {
+  color: rgb(21, 229, 21);
+}
+
+.cancelled {
+  color: red;
+}
+
+.pending {
+  color: rgb(255, 200, 0);
+}
+
+.status-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-appointment-detail {
   padding: 1rem;
   display: grid;
@@ -177,9 +200,11 @@ body {
   padding: 0.3rem;
 }
 
-.pend-button p {
+.pend-button p,
+.view-report p {
   padding: 0.2rem 0;
   margin: 0;
+  font-weight: 700;
 }
 
 .cancel-button {
@@ -192,4 +217,16 @@ body {
 
 .QrCode-button {
   background-color: hsl(213, 22%, 82%);
+}
+
+.view-report {
+  padding: 0.3rem 1rem;
+}
+
+.view-report-botton {
+  width: 100%;
+  border-radius: 10px;
+  padding: 0.3rem 0;
+  border: 1px solid white;
+  background-color: hsl(213, 55%, 67%);
 }

@@ -14,6 +14,13 @@ import {
   RotateCcw,
 } from "lucide-react";
 
+import {
+  FaTimesCircle,
+  FaBan,
+  FaHourglassHalf,
+  FaSpinner,
+} from "react-icons/fa";
+
 function AppointmentCards() {
   return (
     <div className="appointment-card">
@@ -26,8 +33,15 @@ function AppointmentCards() {
           <p className="appointment-id">123456</p>
         </div>
         <div className="appointment-type-container">
-          <h3>Appointment type</h3>
-          <p>Prosthetic</p>
+          <div>
+            <h3>Appointment type</h3>
+            <p>Prosthetic</p>
+          </div>
+          <div className="status-container">
+            <CheckCircle className="honored" />
+            <FaBan className="cancelled" size={22} />
+            <FaHourglassHalf className="pending" size={20} />
+          </div>
         </div>
       </div>
       <div className="main-appointment-detail">
@@ -60,6 +74,7 @@ function AppointmentCards() {
         </div>
       </div>
       <PendingAppointmentButtons />
+      <ViewReportButton />
     </div>
   );
 }
