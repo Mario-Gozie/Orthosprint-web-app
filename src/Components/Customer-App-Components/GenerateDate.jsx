@@ -9,12 +9,18 @@ function GenerateDate(month = dayjs().month(), year = dayjs().year()) {
 
   // Generate prefix date
   for (let i = 0; i < firstDateOfMonth.day(); i++) {
-    arrayOfDate.push(firstDateOfMonth.day(i));
+    arrayOfDate.push({ currentMonth: false, date: firstDateOfMonth.day(i) });
   }
 
   // Generate current date
   for (let i = firstDateOfMonth.date(); i <= lastDateOfMonth.date(); i++) {
-    arrayOfDate.push(firstDateOfMonth.date(i));
+    arrayOfDate.push({
+      currentMonth: true,
+      date: firstDateOfMonth.date(i),
+      today:
+        firstDateOfMonth.date(i).toDate().toDateString() ==
+        dayjs().toDate().toDateString(),
+    });
   }
 
   //Suffix Days
@@ -26,7 +32,7 @@ function GenerateDate(month = dayjs().month(), year = dayjs().year()) {
     i <= lastDateOfMonth.date() + remaining;
     i++
   ) {
-    arrayOfDate.push(lastDateOfMonth.date(i));
+    arrayOfDate.push({ currentMonth: false, date: lastDateOfMonth.date(i) });
   }
   return arrayOfDate;
 }
