@@ -242,10 +242,18 @@ body {
   align-items: center;
 }
 
-.num-date-container {
+.num-days-container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
+}
+
+.num-day-container {
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ddd;
 }
 
 .day {
@@ -253,9 +261,9 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 15px;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
 }
 
 .inactive-month {

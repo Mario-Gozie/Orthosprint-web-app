@@ -33,7 +33,7 @@ function DateUI() {
         })}
       </div>
       <div
-        className="num-date-container"
+        className="num-days-container"
         // style={{
         //   display: "grid",
         //   gridTemplateColumns: "repeat(7, 1fr)",
@@ -45,16 +45,17 @@ function DateUI() {
         {GenerateDate().map(({ date, currentMonth, today }, index) => {
           return (
             <div
+              className="num-day-container"
               key={index}
-              style={{
-                height: "2rem",
-                display: "grid",
-                borderTop: "1px solid #ddd",
-                // placeContent: "center",
-              }}
+              //   style={{
+              //     height: "2rem",
+              //     display: "grid",
+              //     borderTop: "1px solid #ddd",
+              //     // placeContent: "center",
+              //   }}
             >
               <h1
-                className={`day ${currentMonth ? " " : "inactive-month"}, ${
+                className={`day ${currentMonth ? " " : "inactive-month"}  ${
                   today ? "today" : "Not-today"
                 }`}
                 style={{ fontSize: "10px" }}
