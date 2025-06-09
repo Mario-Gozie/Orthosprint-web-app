@@ -269,6 +269,12 @@ body {
 .inactive-month {
   color: #9ca3af;
   opacity: 0.6; /* Optional */
+  transition: all 0.3s;
+}
+
+.day:hover {
+  background: red;
+  cursor: pointer;
 }
 
 .today {
