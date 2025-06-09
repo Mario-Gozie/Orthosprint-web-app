@@ -230,6 +230,24 @@ body {
   border: 1px solid white;
   background-color: hsl(213, 55%, 67%);
 }
+.day-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+
+.string-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.num-date-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
 .day {
   display: flex;
   justify-content: center;
