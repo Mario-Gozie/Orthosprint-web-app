@@ -230,3 +230,22 @@ body {
   border: 1px solid white;
   background-color: hsl(213, 55%, 67%);
 }
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 15px;
+}
+
+.inactive-month {
+  color: #9ca3af;
+  opacity: 0.6; /* Optional */
+}
+
+.today {
+  background: black;
+  color: white;
+}

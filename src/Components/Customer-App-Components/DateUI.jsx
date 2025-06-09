@@ -1,5 +1,7 @@
 import React from "react";
 import GenerateDate from "./GenerateDate";
+import cn from "./cn";
+import "../../Css/CustomerAppCss.css";
 
 function DateUI() {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
@@ -16,7 +18,14 @@ function DateUI() {
       >
         {days.map((day, index) => {
           return (
-            <div key={index}>
+            <div
+              key={index}
+              style={{
+                height: "2rem",
+                display: "grid",
+                placeContent: "center",
+              }}
+            >
               <h1 style={{ fontSize: "10px" }}>{day}</h1>
             </div>
           );
@@ -28,13 +37,29 @@ function DateUI() {
           display: "grid",
           gridTemplateColumns: "repeat(7, 1fr)",
           gridTemplateRows: "repeat(6, 1fr)",
-          gap: "8px",
+
+          //   gap: "8px",
         }}
       >
         {GenerateDate().map(({ date, currentMonth, today }, index) => {
           return (
-            <div key={index}>
-              <h1 style={{ fontSize: "10px" }}>{date.date()}</h1>
+            <div
+              key={index}
+              style={{
+                height: "2rem",
+                display: "grid",
+                borderTop: "1px solid #ddd",
+                // placeContent: "center",
+              }}
+            >
+              <h1
+                className={`day ${currentMonth ? " " : "inactive-month"}, ${
+                  today ? "today" : "Not-today"
+                }`}
+                style={{ fontSize: "10px" }}
+              >
+                {date.date()}
+              </h1>
             </div>
           );
         })}
