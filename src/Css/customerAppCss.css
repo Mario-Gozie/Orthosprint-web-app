@@ -273,11 +273,11 @@ body {
 }
 
 .day:hover {
-  background: red;
+  background: rgb(98, 129, 180);
   cursor: pointer;
 }
 
 .today {
-  background: black;
+  background: red;
   color: white;
 }
