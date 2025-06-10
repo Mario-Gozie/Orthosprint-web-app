@@ -1,70 +1,55 @@
-import React from "react";
+import { React, useState } from "react";
 import GenerateDate from "./GenerateDate";
-import cn from "./cn";
+import dayjs from "dayjs";
+import months from "../../Data/jsonData/months.json";
+import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import "../../Css/CustomerAppCss.css";
 
 function DateUI() {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
+  const currentDate = dayjs();
+  const [today, setToday] = useState(currentDate);
   return (
-    <div className="day-date-container">
-      <div
-        className="day-container"
-        // style={{
-        //   display: "grid",
-        //   gridTemplateColumns: "repeat(7, 1fr)",
-        //   gridTemplateRows: "repeat(1, 1fr)",
-        //   gap: "8px",
-        // }}
-      >
-        {days.map((day, index) => {
-          return (
-            <div
-              className="string-day"
-              key={index}
-              //   style={{
-              //     height: "2rem",
-              //     display: "grid",
-              //     placeContent: "center",
-              //   }}
-            >
-              <h1 style={{ fontSize: "10px" }}>{day}</h1>
-            </div>
-          );
-        })}
+    <div className="select-date-container">
+      <div className="day-date-container">
+        <div>
+          <h3>
+            {months[today.month()]}, {today.year()}
+          </h3>
+          <div>
+            <GrFormPrevious />
+            <h3>Today</h3>
+            <GrFormNext />
+          </div>
+        </div>
+        <div className="day-container">
+          {days.map((day, index) => {
+            return (
+              <div className="string-day" key={index}>
+                <h1 style={{ fontSize: "10px" }}>{day}</h1>
+              </div>
+            );
+          })}
+        </div>
+        <div className="num-days-container">
+          {GenerateDate().map(({ date, currentMonth, today }, index) => {
+            return (
+              <div className="num-day-container" key={index}>
+                <h1
+                  className={`day ${currentMonth ? " " : "inactive-month"}  ${
+                    today ? "today" : "Not-today"
+                  }`}
+                  style={{ fontSize: "10px" }}
+                >
+                  {date.date()}
+                </h1>
+              </div>
+            );
+          })}
+        </div>
       </div>
-      <div
-        className="num-days-container"
-        // style={{
-        //   display: "grid",
-        //   gridTemplateColumns: "repeat(7, 1fr)",
-        //   gridTemplateRows: "repeat(6, 1fr)",
-
-        //   //   gap: "8px",
-        // }}
-      >
-        {GenerateDate().map(({ date, currentMonth, today }, index) => {
-          return (
-            <div
-              className="num-day-container"
-              key={index}
-              //   style={{
-              //     height: "2rem",
-              //     display: "grid",
-              //     borderTop: "1px solid #ddd",
-              //     // placeContent: "center",
-              //   }}
-            >
-              <h1
-                className={`day ${currentMonth ? " " : "inactive-month"}  ${
-                  today ? "today" : "Not-today"
-                }`}
-                style={{ fontSize: "10px" }}
-              >
-                {date.date()}
-              </h1>
-            </div>
-          );
-        })}
+      <div className="chosen-date-container">
+        <h3>{`Your chosen date is `}</h3>
       </div>
     </div>
   );
