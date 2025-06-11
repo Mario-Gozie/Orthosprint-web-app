@@ -12,11 +12,11 @@ function DateUI() {
   return (
     <div className="select-date-container">
       <div className="day-date-container">
-        <div>
+        <div className="month-year-switch">
           <h3>
             {months[today.month()]}, {today.year()}
           </h3>
-          <div>
+          <div className="today-switch-button-container">
             <GrFormPrevious />
             <h3>Today</h3>
             <GrFormNext />

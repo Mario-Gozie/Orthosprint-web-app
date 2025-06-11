@@ -286,3 +286,16 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.month-year-switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.today-switch-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
