@@ -23,7 +23,13 @@ function DateUI() {
                 setToday(today.month(today.month() - 1));
               }}
             />
-            <h3>Today</h3>
+            <h3
+              onClick={() => {
+                setToday(currentDate);
+              }}
+            >
+              Today
+            </h3>
             <GrFormNext
               className="next-month-button"
               onClick={() => {
