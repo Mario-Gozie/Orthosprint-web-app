@@ -9,12 +9,20 @@ function DateUI() {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
   const currentDate = dayjs();
   const [today, setToday] = useState(currentDate);
-  const [choosenDate, setChosenDate] = useState();
+  const [selectedDay, setSelectedDay] = useState(null);
+  const [choosenDate, setChosenDate] = useState(null);
 
   const dateSetter = (day) => {
-    const displayMonth = months[today.month()];
-    setChosenDate(`${day} ${displayMonth} ${today.year()}`);
+    setSelectedDay(selectedDay === day ? null : day);
+
+    if (selectedDay !== day) {
+      const displayMonth = months[today.month()];
+      setChosenDate(`${day} ${displayMonth} ${today.year()}`);
+    } else {
+      setChosenDate(null);
+    }
   };
+
   return (
     <div className="select-date-container">
       <div className="day-date-container">
@@ -61,7 +69,7 @@ function DateUI() {
                   <h1
                     className={`day ${currentMonth ? " " : "inactive-month"}  ${
                       currentToday ? "today" : "Not-today"
-                    }`}
+                    } `}
                     style={{ fontSize: "10px" }}
                     value={date.date()}
                     onClick={() => {
@@ -77,7 +85,12 @@ function DateUI() {
         </div>
       </div>
       <div className="chosen-date-container">
-        <h3>{`Your chosen date is ${choosenDate}`}</h3>
+        {choosenDate && <h3>{`Your chosen date is ${choosenDate}`}</h3>}
+        {!choosenDate && (
+          <h3
+            style={{ display: "none" }}
+          >{`Your chosen date is ${choosenDate}`}</h3>
+        )}
       </div>
     </div>
   );

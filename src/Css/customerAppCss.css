@@ -272,7 +272,7 @@ body {
   transition: all 0.3s;
 }
 
-.day:hover {
+.Not-today:hover {
   background: rgb(98, 129, 180);
   cursor: pointer;
 }
@@ -280,6 +280,9 @@ body {
 .today {
   background: red;
   color: white;
+  /* pointer-events: none; */
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .select-date-container {
@@ -311,3 +314,11 @@ body {
 .previous-month-button:active {
   background: rgb(156, 156, 205);
 }
+
+.day-selected {
+  background: blue;
+}
+
+/* .day-not-selected {
+  background: white;
+} */
