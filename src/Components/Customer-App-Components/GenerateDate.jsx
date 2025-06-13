@@ -17,7 +17,7 @@ function GenerateDate(month = dayjs().month(), year = dayjs().year()) {
     arrayOfDate.push({
       currentMonth: true,
       date: firstDateOfMonth.date(i),
-      today:
+      currentToday:
         firstDateOfMonth.date(i).toDate().toDateString() ==
         dayjs().toDate().toDateString(),
     });

@@ -9,6 +9,12 @@ function DateUI() {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
   const currentDate = dayjs();
   const [today, setToday] = useState(currentDate);
+  const [choosenDate, setChosenDate] = useState();
+
+  const dateSetter = (day) => {
+    const displayMonth = months[today.month()];
+    setChosenDate(`${day} ${displayMonth} ${today.year()}`);
+  };
   return (
     <div className="select-date-container">
       <div className="day-date-container">
@@ -49,14 +55,18 @@ function DateUI() {
         </div>
         <div className="num-days-container">
           {GenerateDate(today.month(), today.year()).map(
-            ({ date, currentMonth, today }, index) => {
+            ({ date, currentMonth, currentToday }, index) => {
               return (
                 <div className="num-day-container" key={index}>
                   <h1
                     className={`day ${currentMonth ? " " : "inactive-month"}  ${
-                      today ? "today" : "Not-today"
+                      currentToday ? "today" : "Not-today"
                     }`}
                     style={{ fontSize: "10px" }}
+                    value={date.date()}
+                    onClick={() => {
+                      dateSetter(date.date());
+                    }}
                   >
                     {date.date()}
                   </h1>
@@ -67,7 +77,7 @@ function DateUI() {
         </div>
       </div>
       <div className="chosen-date-container">
-        <h3>{`Your chosen date is `}</h3>
+        <h3>{`Your chosen date is ${choosenDate}`}</h3>
       </div>
     </div>
   );
