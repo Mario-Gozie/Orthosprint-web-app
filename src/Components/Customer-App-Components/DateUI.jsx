@@ -65,7 +65,7 @@ function DateUI() {
           {GenerateDate(today.month(), today.year()).map(
             ({ date, currentMonth, currentToday }, index) => {
               return (
-                <div className="num-day-container" key={index}>
+                <div className={`num-day-container`} key={index}>
                   <h1
                     className={`day ${currentMonth ? " " : "inactive-month"}  ${
                       currentToday ? "today" : "Not-today"
@@ -73,11 +73,16 @@ function DateUI() {
                       selectedDay === date.date()
                         ? "selected-day"
                         : "not-selected-day"
-                    } `}
+                    }  ${
+                      [0, 2, 4, 6].includes(date.$W)
+                        ? "inactive-day"
+                        : "active-day"
+                    }`}
                     style={{ fontSize: "10px" }}
                     value={date.date()}
                     onClick={() => {
                       dateSetter(date.date());
+                      console.log(date.$W);
                     }}
                   >
                     {date.date()}
