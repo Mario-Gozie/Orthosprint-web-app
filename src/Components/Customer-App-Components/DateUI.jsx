@@ -69,6 +69,10 @@ function DateUI() {
                   <h1
                     className={`day ${currentMonth ? " " : "inactive-month"}  ${
                       currentToday ? "today" : "Not-today"
+                    } ${
+                      selectedDay === date.date()
+                        ? "selected-day"
+                        : "not-selected-day"
                     } `}
                     style={{ fontSize: "10px" }}
                     value={date.date()}
@@ -86,11 +90,7 @@ function DateUI() {
       </div>
       <div className="chosen-date-container">
         {choosenDate && <h3>{`Your chosen date is ${choosenDate}`}</h3>}
-        {!choosenDate && (
-          <h3
-            style={{ display: "none" }}
-          >{`Your chosen date is ${choosenDate}`}</h3>
-        )}
+        {!choosenDate && ""}
       </div>
     </div>
   );

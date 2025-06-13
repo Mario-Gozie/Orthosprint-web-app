@@ -315,10 +315,7 @@ body {
   background: rgb(156, 156, 205);
 }
 
-.day-selected {
+.selected-day {
   background: blue;
+  color: white;
 }
-
-/* .day-not-selected {
-  background: white;
-} */
