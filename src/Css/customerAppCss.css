@@ -264,17 +264,15 @@ body {
   width: 1.7rem;
   height: 1.7rem;
   border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
 }
 
 .inactive-month {
   color: #9ca3af;
-  opacity: 0.6; /* Optional */
+  opacity: 0.5; /* Optional */
   transition: all 0.3s;
-}
-
-.Not-today:hover {
-  background: rgb(98, 129, 180);
-  cursor: pointer;
 }
 
 .today {
@@ -282,11 +280,6 @@ body {
   color: white;
   opacity: 0.6;
   cursor: not-allowed;
-  /* pointer-events: none; */
-}
-
-.inactive-day {
-  background: green;
 }
 
 .select-date-container {
@@ -319,7 +312,33 @@ body {
   background: rgb(156, 156, 205);
 }
 
-.selected-day {
-  background: blue;
+.day.unclickable {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.day:not(.unclickable):hover {
+  color: black;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.day.selected {
+  background: #1890ff;
   color: white;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.day.inactive-day::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #999;
+  transform: rotate(-45deg);
+  transform-origin: center;
 }

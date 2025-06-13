@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import GenerateDate from "./GenerateDate";
 import dayjs from "dayjs";
+import clsx from "clsx";
 import months from "../../Data/jsonData/months.json";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import "../../Css/CustomerAppCss.css";
@@ -8,18 +9,18 @@ import "../../Css/CustomerAppCss.css";
 function DateUI() {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
   const currentDate = dayjs();
-  const [today, setToday] = useState(currentDate);
-  const [selectedDay, setSelectedDay] = useState(null);
+  const [activeDate, setActiveDate] = useState(currentDate);
+  // const [selectedDay, setSelectedDay] = useState(null);
   const [choosenDate, setChosenDate] = useState(null);
 
   const dateSetter = (day) => {
-    setSelectedDay(selectedDay === day ? null : day);
-
-    if (selectedDay !== day) {
-      const displayMonth = months[today.month()];
-      setChosenDate(`${day} ${displayMonth} ${today.year()}`);
-    } else {
+    // setSelectedDay(selectedDay === day ? null : day);
+    const stringDate = day.format("D-MMMM-YYYY");
+    console.log(stringDate);
+    if (choosenDate === stringDate) {
       setChosenDate(null);
+    } else {
+      setChosenDate(stringDate);
     }
   };
 
@@ -28,18 +29,18 @@ function DateUI() {
       <div className="day-date-container">
         <div className="month-year-switch">
           <h3>
-            {months[today.month()]}, {today.year()}
+            {months[activeDate.month()]}, {activeDate.year()}
           </h3>
           <div className="today-switch-button-container">
             <GrFormPrevious
               className="previous-month-button"
               onClick={() => {
-                setToday(today.month(today.month() - 1));
+                setActiveDate(activeDate.month(activeDate.month() - 1));
               }}
             />
             <h3
               onClick={() => {
-                setToday(currentDate);
+                setActiveDate(currentDate);
               }}
             >
               Today
@@ -47,7 +48,7 @@ function DateUI() {
             <GrFormNext
               className="next-month-button"
               onClick={() => {
-                setToday(today.month(today.month() + 1));
+                setActiveDate(activeDate.month(activeDate.month() + 1));
               }}
             />
           </div>
@@ -62,28 +63,24 @@ function DateUI() {
           })}
         </div>
         <div className="num-days-container">
-          {GenerateDate(today.month(), today.year()).map(
+          {GenerateDate(activeDate.month(), activeDate.year()).map(
             ({ date, currentMonth, currentToday }, index) => {
+              const isUnclickable =
+                [0, 2, 4, 6].includes(date.$W) || currentToday;
+
               return (
                 <div className={`num-day-container`} key={index}>
                   <h1
-                    className={`day ${currentMonth ? " " : "inactive-month"}  ${
-                      currentToday ? "today" : "Not-today"
-                    } ${
-                      selectedDay === date.date()
-                        ? "selected-day"
-                        : "not-selected-day"
-                    }  ${
-                      [0, 2, 4, 6].includes(date.$W)
-                        ? "inactive-day"
-                        : "active-day"
-                    }`}
+                    data-date={date.format("YYYY-MM-DD")}
+                    className={clsx("day", {
+                      "inactive-month": !currentMonth,
+                      today: currentToday,
+                      "inactive-day": [0, 2, 4, 6].includes(date.$W),
+                      selected: date.isSame(choosenDate, "day"),
+                      unclickable: isUnclickable,
+                    })}
                     style={{ fontSize: "10px" }}
-                    value={date.date()}
-                    onClick={() => {
-                      dateSetter(date.date());
-                      console.log(date.$W);
-                    }}
+                    onClick={isUnclickable ? undefined : () => dateSetter(date)}
                   >
                     {date.date()}
                   </h1>

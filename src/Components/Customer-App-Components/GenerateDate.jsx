@@ -34,6 +34,7 @@ function GenerateDate(month = dayjs().month(), year = dayjs().year()) {
   ) {
     arrayOfDate.push({ currentMonth: false, date: lastDateOfMonth.date(i) });
   }
+
   return arrayOfDate;
 }
 
