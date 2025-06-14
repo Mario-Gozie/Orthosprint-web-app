@@ -13,14 +13,19 @@ function DateUI() {
 
   const [choosenDate, setChosenDate] = useState(null);
 
-  const dateSetter = (day) => {
+  const dateSetter = (day, currentMonth) => {
     // setSelectedDay(selectedDay === day ? null : day);
     const stringDate = day.format("D-MMMM-YYYY");
     console.log(stringDate);
     if (choosenDate === stringDate) {
       setChosenDate(null);
     } else {
-      setChosenDate(stringDate);
+      if (day.$M === currentMonth) {
+        setChosenDate(stringDate);
+      } else {
+        setActiveDate(day);
+        setChosenDate(stringDate);
+      }
     }
   };
 
