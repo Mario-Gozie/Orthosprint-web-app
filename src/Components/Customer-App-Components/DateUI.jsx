@@ -10,7 +10,7 @@ function DateUI() {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
   const currentDate = dayjs();
   const [activeDate, setActiveDate] = useState(currentDate);
-  // const [selectedDay, setSelectedDay] = useState(null);
+
   const [choosenDate, setChosenDate] = useState(null);
 
   const dateSetter = (day) => {
