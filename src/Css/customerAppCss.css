@@ -230,6 +230,26 @@ body {
   border: 1px solid white;
   background-color: hsl(213, 55%, 67%);
 }
+
+/* Appointment Booking route */
+
+.appointment-booking {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #add8e6, white);
+  text-align: center;
+}
+
+.availble-days-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 .day-container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);

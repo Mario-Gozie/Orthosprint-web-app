@@ -10,7 +10,7 @@ function Booking() {
           <h3>Orthosprint Prosthetic & Orthotic Centre</h3>
           <p>Book Your Appointment</p>
         </div>
-        <div>
+        <div className="availble-days-info-container">
           <Calendar />
           <p>Available: Mondays, Wednesdays & Fridays</p>
         </div>
