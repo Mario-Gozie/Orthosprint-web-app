@@ -1,4 +1,5 @@
 import React from "react";
+import { Calendar } from "lucide-react";
 
 function BookAppointmentForm() {
   return (
@@ -11,7 +12,16 @@ function BookAppointmentForm() {
         <div>
           <label htmlFor=""></label>
         </div>
-        <button></button>
+        <div className="form-group">
+          <label>Notes:</label>
+          <textarea
+            name="notes"
+            placeholder="Describe your specific needs..."
+          />
+        </div>
+        <button type="submit" className="btn-apt-submit">
+          <Calendar /> Book Appointment
+        </button>
       </form>
     </div>
   );
