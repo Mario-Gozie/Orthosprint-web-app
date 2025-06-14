@@ -269,7 +269,14 @@ body {
   width: 90%;
   padding: 0.7rem;
   border-radius: 15px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1); /* Bouncy */
 }
+
+.select-date-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .day-container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
