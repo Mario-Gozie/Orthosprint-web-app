@@ -49,7 +49,7 @@ const TimeSlotPicker = ({ availableSlots }) => {
             ))}
           </div>
           {selectedSlot && (
-            <p className="confirmation" aria-live="polite">
+            <p className="time-confirmation" aria-live="polite">
               Selected: <strong>{selectedSlot}</strong>
             </p>
           )}

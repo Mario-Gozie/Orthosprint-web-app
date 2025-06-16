@@ -6,25 +6,26 @@ import months from "../../Data/jsonData/months.json";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import "../../Css/CustomerAppCss.css";
 
-function DateUI() {
+function DateUI({ choosenDate, changeDate: onChangeDate }) {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
   const currentDate = dayjs();
   const [activeDate, setActiveDate] = useState(currentDate);
 
-  const [choosenDate, setChosenDate] = useState(null);
+  // const [choosenDate, setChosenDate] = useState(null);
 
-  const dateSetter = (day, currentMonth) => {
+  const handleDateChange = (day, currentMonth) => {
     // setSelectedDay(selectedDay === day ? null : day);
     const stringDate = day.format("D-MMMM-YYYY");
     console.log(stringDate);
     if (choosenDate === stringDate) {
-      setChosenDate(null);
+      onChangeDate(stringDate); // Call the prop function
     } else {
       if (day.$M === currentMonth) {
-        setChosenDate(stringDate);
+        // setChosenDate(stringDate);
+        choosenDate = stringDate;
       } else {
         setActiveDate(day);
-        setChosenDate(stringDate);
+        onChangeDate(stringDate); // Call the prop function
       }
     }
   };
@@ -85,7 +86,9 @@ function DateUI() {
                       unclickable: isUnclickable,
                     })}
                     style={{ fontSize: "10px" }}
-                    onClick={isUnclickable ? undefined : () => dateSetter(date)}
+                    onClick={
+                      isUnclickable ? undefined : () => handleDateChange(date)
+                    }
                   >
                     {date.date()}
                   </h1>

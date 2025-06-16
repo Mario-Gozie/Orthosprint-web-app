@@ -268,11 +268,13 @@ body {
   background: white;
   width: 90%;
   padding: 0.7rem;
+  margin: 0.5rem 0;
   border-radius: 15px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1); /* Bouncy */
 }
 
-.select-date-container:hover {
+.select-date-container:hover,
+.book-appointment-detail-container:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -385,6 +387,66 @@ body {
   transform-origin: center;
 }
 
+/*  APPOINTMENT DETAIL */
+.book-appointment-detail-container {
+  width: 90%;
+  background: white;
+  padding: 0.7rem;
+  margin: 0.5rem 0;
+  border-radius: 15px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif; /* Modern font stack */
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Prevents overflow */
+}
+
+textarea {
+  height: 100px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #4a90e2; /* Soft blue */
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+  background-color: #fff;
+}
+
+.book-appointment-detail-container h3,
+.book-appointment-detail-container label {
+  color: #444;
+  justify-self: flex-start;
+}
+
+label {
+  display: block;
+  align-self: flex-start;
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: #444;
+}
+
+select {
+  appearance: none; /* Removes default arrow */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234a90e2'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px; /* Space for arrow */
+}
+
 /* WILL LOOK AT */
 .time-slot-picker {
   margin: 1.5rem 0;
@@ -425,8 +487,38 @@ body {
   outline-offset: 2px;
 }
 
-.confirmation {
+.time-confirmation {
   margin-top: 1rem;
   font-size: 0.9rem;
   color: #334155;
+}
+
+.btn-apt-submit {
+  display: flex; /* Allows padding and respects text-align */
+  justify-self: center;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 10px 20px; /* Top/Bottom: 10px, Left/Right: 20px */
+  background-color: #007bff; /* Primary blue (change to your brand color) */
+  color: white; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Slightly rounded corners */
+  font-family: "Arial", sans-serif; /* Clean font */
+  font-size: 16px; /* Readable text size */
+  font-weight: 500; /* Medium weight (not too thin/bold) */
+  text-align: center; /* Center text */
+  cursor: pointer; /* Hand cursor on hover */
+  text-decoration: none; /* Remove underline if it's a link */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover State */
+.btn-apt-submit:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Active (Clicked) State */
+.btn-apt-submit:active {
+  transform: scale(0.98); /* Slight "press down" effect */
 }
