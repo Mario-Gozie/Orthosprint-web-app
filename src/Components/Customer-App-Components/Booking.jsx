@@ -13,6 +13,7 @@ function Booking() {
   };
   const [inputs, setInputs] = useState(initialState);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [isAvailableTime, setIsAvailableTime] = useState(false);
   const [availableTimeSlots, setAvailableTimeSlot] = useState(null);
   const [choosenDate, setChosenDate] = useState(null);
   const [chosenTime, setChosenTime] = useState(null);
@@ -36,6 +37,7 @@ function Booking() {
     setIsButtonDisabled(
       !(isServiceValid && isSpecialistValid && isDateValid && isBookedTimeValid)
     );
+    setIsAvailableTime(!(isDateValid && isSpecialistValid && isServiceValid));
   }, [inputs]);
 
   // Update state for external date picker
@@ -60,6 +62,7 @@ function Booking() {
     console.log("Form submitted:", inputs);
     clearForm();
     setChosenDate(null);
+    setChosenTime(null);
     console.log("Form submitted:", inputs);
   };
 
@@ -91,6 +94,7 @@ function Booking() {
         formRef={formRef}
         chosenTime={chosenTime}
         setChosenTime={setChosenTime}
+        isAvailableTime={isAvailableTime}
       />
     </div>
   );

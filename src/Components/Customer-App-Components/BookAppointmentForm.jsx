@@ -14,12 +14,8 @@ function BookAppointmentForm({
   chosenTime,
   setChosenTime,
   formRef,
+  isAvailableTime,
 }) {
-  //   const handleSubmit = (e) => {
-  //     e.preventDefault();
-  //     console.log("Form submitted:", inputs);
-  //   };
-
   return (
     <div className="book-appointment-detail-container">
       <h3>Appointment Details</h3>
@@ -75,6 +71,7 @@ function BookAppointmentForm({
           bookTime={handleBookedTime}
           chosenTime={chosenTime}
           setChosenTime={setChosenTime}
+          isAvailableTime={isAvailableTime}
         />
         <div className="extra-note-container">
           <label>Notes:</label>

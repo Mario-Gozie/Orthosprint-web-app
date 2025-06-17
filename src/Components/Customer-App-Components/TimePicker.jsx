@@ -5,6 +5,7 @@ const TimeSlotPicker = ({
   inputs,
   chosenTime,
   setChosenTime,
+  isAvailableTime,
   bookTime: onBookedTime,
 }) => {
   //   const [selectedSlot, setSelectedSlot] = useState(null);
@@ -40,6 +41,7 @@ const TimeSlotPicker = ({
       className="time-slot-picker"
       role="group"
       aria-labelledby="timeslot-label"
+      hidden={isAvailableTime}
     >
       {timeSlots && (
         <>
