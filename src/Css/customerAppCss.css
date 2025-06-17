@@ -525,6 +525,44 @@ select {
   color: #334155;
 }
 
+.time-slot-picker {
+  transform-origin: top center;
+  transform: scaleY(1);
+}
+
+.time-slot-picker[hidden] {
+  transform: scaleY(0.8);
+}
+
+@keyframes bounceAppear {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.time-slot-picker:not([hidden]) {
+  animation: bounceAppear 0.5s ease-out;
+}
+
+/* .time-slot-picker {
+  transition: all 0.3s ease-in-out;
+  will-change: opacity, height;
+}
+
+.time-slot-picker[hidden] {
+  display: block !important; 
+  opacity: 0;
+  height: 0;
+  pointer-events: none;
+  overflow: hidden;
+} */
+
 .btn-apt-submit {
   display: flex; /* Allows padding and respects text-align */
   justify-self: center;

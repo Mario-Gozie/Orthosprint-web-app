@@ -41,6 +41,7 @@ const TimeSlotPicker = ({
       className="time-slot-picker"
       role="group"
       aria-labelledby="timeslot-label"
+      aria-live="polite" // For screen reader announcements
       hidden={isAvailableTime}
     >
       {timeSlots && (
