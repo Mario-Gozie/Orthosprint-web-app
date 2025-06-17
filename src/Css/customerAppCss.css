@@ -347,13 +347,24 @@ body {
 .next-month-button,
 .previous-month-button {
   padding: 0.5rem;
+  border: 1px solid #e5e7eb; /* Light gray border */
   border-radius: 50%;
-  background: rgb(164, 114, 114);
+  /* background: rgb(164, 114, 114); */
+}
+
+.next-month-button:hover,
+.previous-month-button:hover {
+  background: #eff6ff; /* Light blue bg on hover */
+  color: #1d4ed8;
+  border-color: #1d4ed8; /* Darker blue on hover */
+  cursor: pointer;
 }
 
 .next-month-button:active,
 .previous-month-button:active {
-  background: rgb(156, 156, 205);
+  background: #e0e7ff; /* Light blue press */
+  border: 1.5px solid #2563eb; /* Border emphasis */
+  transform: scale(0.98); /* Micro-interaction */
 }
 
 .day.unclickable {
@@ -485,6 +496,11 @@ select {
 .slot-button:focus-visible {
   outline: 3px solid #93c5fd;
   outline-offset: 2px;
+  transform: scale(0.98); /* Micro-interaction */
+}
+
+.slot-button:active {
+  transform: scale(0.98); /* Micro-interaction */
 }
 
 .time-confirmation {

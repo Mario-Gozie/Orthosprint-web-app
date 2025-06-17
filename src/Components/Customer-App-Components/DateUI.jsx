@@ -11,10 +11,7 @@ function DateUI({ choosenDate, selectDate: onSelectDate }) {
   const currentDate = dayjs();
   const [activeDate, setActiveDate] = useState(currentDate);
 
-  // const [choosenDate, setChosenDate] = useState(null);
-
   const handleDateChange = (day, currentMonth) => {
-    // setSelectedDay(selectedDay === day ? null : day);
     const stringDate = day.format("D-MMMM-YYYY");
     console.log(stringDate);
     if (choosenDate === stringDate) {
