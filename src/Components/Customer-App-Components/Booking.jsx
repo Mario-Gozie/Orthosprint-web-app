@@ -8,18 +8,23 @@ function Booking() {
     service: "",
     specialist: "",
     date: null,
+    bookedTime: "",
     bookingNote: "",
   });
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [availableTimeSlots, setAvailableTimeSlot] = useState(null);
 
   // Validation Process
 
   useEffect(() => {
-    const isDateValid = inputs.date !== null; // Replace with your validation logic
-    const areInputsFilled = Object.values(inputs).every(
-      (value) => value !== "" && value !== null
+    const isServiceValid = inputs.service.trim() !== "";
+    const isSpecialistValid = inputs.specialist.trim() !== "";
+    const isDateValid = inputs.date !== null;
+    const isBookedTimeValid = inputs.bookedTime.trim() !== "";
+
+    setIsButtonDisabled(
+      !(isServiceValid && isSpecialistValid && isDateValid && isBookedTimeValid)
     );
-    setIsButtonDisabled(!(areInputsFilled && isDateValid));
   }, [inputs]);
 
   // Update state for external date picker
@@ -32,6 +37,12 @@ function Booking() {
     const { name, value } = e.target;
     setInputs((prev) => ({ ...prev, [name]: value }));
   };
+
+  // For time slot specifically
+  const handleTimeSlotSelect = (slot) => {
+    setInputs((prev) => ({ ...prev, bookedTime: slot }));
+  };
+
   return (
     <div className="appointment-booking">
       <div className="booking-welcome-text">
@@ -44,10 +55,12 @@ function Booking() {
           <p>Available: Mondays, Wednesdays & Fridays</p>
         </div>
       </div>
-      <DateUI choosenDate={inputs.date} changeDate={handleDateChange} />
+      <DateUI choosenDate={inputs.date} selectDate={handleDateChange} />
       <BookAppointmentForm
+        availableTimeSlots={availableTimeSlots}
         inputs={inputs}
         handleInputChange={handleInputChange}
+        handleTimeSlotSelect={handleTimeSlotSelect}
         isButtonDisabled={isButtonDisabled}
       />
     </div>

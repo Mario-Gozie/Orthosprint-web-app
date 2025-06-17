@@ -1,15 +1,21 @@
+import { Target } from "lucide-react";
 import React, { useState } from "react";
 import { to } from "react-spring";
 
-const TimeSlotPicker = ({ availableSlots }) => {
+const TimeSlotPicker = ({
+  availableTimeSlots,
+  inputs,
+  selectTime: onTimeSlotSelect,
+}) => {
   const [selectedSlot, setSelectedSlot] = useState(null);
 
   const handleSlotClick = (slot) => {
     setSelectedSlot(slot);
+    onTimeSlotSelect(slot);
   };
 
   // Sample time slots (replace with your actual data)
-  const timeSlots = availableSlots || [
+  const timeSlots = availableTimeSlots || [
     "08:00 AM",
     "09:00 AM",
     "10:00 AM",
@@ -36,11 +42,13 @@ const TimeSlotPicker = ({ availableSlots }) => {
           <div className="slot-grid">
             {timeSlots.map((slot) => (
               <button
+                name="bookedTime"
                 key={slot}
                 type="button"
                 className={`slot-button ${
                   selectedSlot === slot ? "selected" : ""
                 }`}
+                value={inputs.bookedTime}
                 onClick={() => handleSlotClick(slot)}
                 aria-pressed={selectedSlot === slot}
               >

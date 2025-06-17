@@ -522,3 +522,16 @@ select {
 .btn-apt-submit:active {
   transform: scale(0.98); /* Slight "press down" effect */
 }
+
+.btn-apt-submit:disabled {
+  opacity: 0.6; /* Makes the button appear faded */
+  cursor: not-allowed; /* Changes the cursor to indicate it's not clickable */
+  background-color: #cccccc; /* A dull color to indicate inactivity */
+  color: #666666; /* Darker text that's still muted */
+  border: 1px solid #999999; /* Subtle border */
+}
+
+/* Optional: Hover effect to reinforce that it's disabled */
+.btn-apt-submit:disabled:hover {
+  background-color: #cccccc; /* Same as normal state */
+}

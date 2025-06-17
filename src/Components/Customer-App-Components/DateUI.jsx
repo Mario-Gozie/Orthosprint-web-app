@@ -6,7 +6,7 @@ import months from "../../Data/jsonData/months.json";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import "../../Css/CustomerAppCss.css";
 
-function DateUI({ choosenDate, changeDate: onChangeDate }) {
+function DateUI({ choosenDate, selectDate: onSelectDate }) {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
   const currentDate = dayjs();
   const [activeDate, setActiveDate] = useState(currentDate);
@@ -18,14 +18,14 @@ function DateUI({ choosenDate, changeDate: onChangeDate }) {
     const stringDate = day.format("D-MMMM-YYYY");
     console.log(stringDate);
     if (choosenDate === stringDate) {
-      onChangeDate(stringDate); // Call the prop function
+      onSelectDate(stringDate); // Call the prop function
     } else {
       if (day.$M === currentMonth) {
         // setChosenDate(stringDate);
         choosenDate = stringDate;
       } else {
         setActiveDate(day);
-        onChangeDate(stringDate); // Call the prop function
+        onSelectDate(stringDate); // Call the prop function
       }
     }
   };

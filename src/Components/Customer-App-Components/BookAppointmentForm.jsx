@@ -4,7 +4,13 @@ import services from "../../Data/jsonData/services.json";
 import months from "../../Data/jsonData/months.json";
 import TimeSlotPicker from "./TimePicker";
 
-function BookAppointmentForm({ inputs, handleInputChange, isButtonDisabled }) {
+function BookAppointmentForm({
+  inputs,
+  availableTimeSlots,
+  handleTimeSlotSelect,
+  handleInputChange,
+  isButtonDisabled,
+}) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", inputs);
@@ -59,7 +65,11 @@ function BookAppointmentForm({ inputs, handleInputChange, isButtonDisabled }) {
           </div>
         </div>
 
-        <TimeSlotPicker />
+        <TimeSlotPicker
+          availableTimeSlots={availableTimeSlots}
+          inputs={inputs}
+          selectTime={handleTimeSlotSelect}
+        />
         <div className="extra-note-container">
           <label>Notes:</label>
           <textarea
