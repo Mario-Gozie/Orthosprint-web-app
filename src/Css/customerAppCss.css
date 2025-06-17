@@ -518,7 +518,8 @@ select {
   transform: scale(0.98); /* Micro-interaction */
 }
 
-.time-confirmation {
+.time-confirmation,
+.date-confirmation {
   margin-top: 1rem;
   font-size: 0.9rem;
   color: #334155;

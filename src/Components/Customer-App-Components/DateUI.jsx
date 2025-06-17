@@ -6,7 +6,7 @@ import months from "../../Data/jsonData/months.json";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import "../../Css/CustomerAppCss.css";
 
-function DateUI({ choosenDate, selectDate: onSelectDate }) {
+function DateUI({ choosenDate, setChosenDate, bookDate: onBookDate }) {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
   const currentDate = dayjs();
   const [activeDate, setActiveDate] = useState(currentDate);
@@ -15,13 +15,17 @@ function DateUI({ choosenDate, selectDate: onSelectDate }) {
     const stringDate = day.format("D-MMMM-YYYY");
     console.log(stringDate);
     if (choosenDate === stringDate) {
-      onSelectDate(null); // Call the prop function
+      setChosenDate(null);
+      onBookDate(null); // Call the prop function
     } else {
       if (day.$M === currentMonth) {
-        choosenDate = stringDate;
+        // choosenDate = stringDate;
+        setChosenDate(stringDate);
+        console.log("This is chosen", choosenDate);
       } else {
         setActiveDate(day);
-        onSelectDate(stringDate); // Call the prop function
+        setChosenDate(stringDate);
+        onBookDate(stringDate); // Call the prop function
       }
     }
   };
@@ -95,7 +99,11 @@ function DateUI({ choosenDate, selectDate: onSelectDate }) {
         </div>
       </div>
       <div className="chosen-date-container">
-        {choosenDate && <h3>{`Your chosen date is ${choosenDate}`}</h3>}
+        {choosenDate && (
+          <p className="date-confirmation">
+            Your chosen date: <strong>{choosenDate}</strong>
+          </p>
+        )}
         {!choosenDate && ""}
       </div>
     </div>

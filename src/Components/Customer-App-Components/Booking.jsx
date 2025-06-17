@@ -1,19 +1,30 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import { Calendar } from "lucide-react";
 import DateUI from "./DateUI";
 import BookAppointmentForm from "./BookAppointmentForm";
 
 function Booking() {
-  const [inputs, setInputs] = useState({
+  const initialState = {
     service: "",
     specialist: "",
-    date: null,
+    bookedDate: null,
     bookedTime: "",
     bookingNote: "",
-  });
+  };
+  const [inputs, setInputs] = useState(initialState);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [availableTimeSlots, setAvailableTimeSlot] = useState(null);
+  const [choosenDate, setChosenDate] = useState(null);
+  const [chosenTime, setChosenTime] = useState(null);
 
+  // Form Clearing
+  const formRef = useRef();
+  const clearForm = () => {
+    setInputs(initialState); // Reset React state
+    if (formRef.current) {
+      formRef.current.reset(); // Optional DOM reset
+    }
+  };
   // Validation Process
 
   useEffect(() => {
@@ -28,8 +39,8 @@ function Booking() {
   }, [inputs]);
 
   // Update state for external date picker
-  const handleDateChange = (date) => {
-    setInputs((prev) => ({ ...prev, date }));
+  const handleDateChange = (bookedDate) => {
+    setInputs((prev) => ({ ...prev, bookedDate }));
   };
 
   // Update state for form inputs
@@ -39,8 +50,17 @@ function Booking() {
   };
 
   // For time slot specifically
-  const handleTimeSlotSelect = (slot) => {
+  const handleBookedTime = (slot) => {
     setInputs((prev) => ({ ...prev, bookedTime: slot }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log("Form submitted:", inputs);
+    clearForm();
+    setChosenDate(null);
+    console.log("Form submitted:", inputs);
   };
 
   return (
@@ -55,13 +75,22 @@ function Booking() {
           <p>Available: Mondays, Wednesdays & Fridays</p>
         </div>
       </div>
-      <DateUI choosenDate={inputs.date} selectDate={handleDateChange} />
+      <DateUI
+        choosenDate={choosenDate}
+        setChosenDate={setChosenDate}
+        bookedDate={inputs.bookedDate}
+        bookDate={handleDateChange}
+      />
       <BookAppointmentForm
         availableTimeSlots={availableTimeSlots}
         inputs={inputs}
         handleInputChange={handleInputChange}
-        handleTimeSlotSelect={handleTimeSlotSelect}
+        handleBookedTime={handleBookedTime}
         isButtonDisabled={isButtonDisabled}
+        onFormSubmit={handleSubmit}
+        formRef={formRef}
+        chosenTime={chosenTime}
+        setChosenTime={setChosenTime}
       />
     </div>
   );

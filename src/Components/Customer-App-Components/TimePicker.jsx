@@ -1,21 +1,21 @@
-import { Target } from "lucide-react";
 import React, { useState } from "react";
-import { to } from "react-spring";
 
 const TimeSlotPicker = ({
   availableTimeSlots,
   inputs,
-  selectTime: onTimeSlotSelect,
+  chosenTime,
+  setChosenTime,
+  bookTime: onBookedTime,
 }) => {
-  const [selectedSlot, setSelectedSlot] = useState(null);
+  //   const [selectedSlot, setSelectedSlot] = useState(null);
 
   const handleSlotClick = (slot) => {
-    if (selectedSlot === slot) {
-      setSelectedSlot(null);
-      onTimeSlotSelect("");
+    if (chosenTime === slot) {
+      setChosenTime(null);
+      onBookedTime("");
     } else {
-      setSelectedSlot(slot);
-      onTimeSlotSelect(slot);
+      setChosenTime(slot);
+      onBookedTime(slot);
     }
   };
 
@@ -51,19 +51,19 @@ const TimeSlotPicker = ({
                 key={slot}
                 type="button"
                 className={`slot-button ${
-                  selectedSlot === slot ? "selected" : ""
+                  chosenTime === slot ? "selected" : ""
                 }`}
                 value={inputs.bookedTime}
                 onClick={() => handleSlotClick(slot)}
-                aria-pressed={selectedSlot === slot}
+                aria-pressed={chosenTime === slot}
               >
                 {slot}
               </button>
             ))}
           </div>
-          {selectedSlot && (
+          {chosenTime && (
             <p className="time-confirmation" aria-live="polite">
-              Selected: <strong>{selectedSlot}</strong>
+              Selected: <strong>{chosenTime}</strong>
             </p>
           )}
         </>

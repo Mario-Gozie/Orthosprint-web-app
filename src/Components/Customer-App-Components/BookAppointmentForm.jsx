@@ -7,19 +7,23 @@ import TimeSlotPicker from "./TimePicker";
 function BookAppointmentForm({
   inputs,
   availableTimeSlots,
-  handleTimeSlotSelect,
+  handleBookedTime,
   handleInputChange,
   isButtonDisabled,
+  onFormSubmit,
+  chosenTime,
+  setChosenTime,
+  formRef,
 }) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", inputs);
-  };
+  //   const handleSubmit = (e) => {
+  //     e.preventDefault();
+  //     console.log("Form submitted:", inputs);
+  //   };
 
   return (
     <div className="book-appointment-detail-container">
       <h3>Appointment Details</h3>
-      <form action="" onSubmit={handleSubmit}>
+      <form action="" onSubmit={onFormSubmit} ref={formRef}>
         <div className="service-specialist-container">
           <div className="service-container">
             <label htmlFor="">
@@ -68,7 +72,9 @@ function BookAppointmentForm({
         <TimeSlotPicker
           availableTimeSlots={availableTimeSlots}
           inputs={inputs}
-          selectTime={handleTimeSlotSelect}
+          bookTime={handleBookedTime}
+          chosenTime={chosenTime}
+          setChosenTime={setChosenTime}
         />
         <div className="extra-note-container">
           <label>Notes:</label>
