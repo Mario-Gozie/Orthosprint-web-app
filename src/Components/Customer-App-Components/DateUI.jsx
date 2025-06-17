@@ -15,10 +15,9 @@ function DateUI({ choosenDate, selectDate: onSelectDate }) {
     const stringDate = day.format("D-MMMM-YYYY");
     console.log(stringDate);
     if (choosenDate === stringDate) {
-      onSelectDate(stringDate); // Call the prop function
+      onSelectDate(null); // Call the prop function
     } else {
       if (day.$M === currentMonth) {
-        // setChosenDate(stringDate);
         choosenDate = stringDate;
       } else {
         setActiveDate(day);

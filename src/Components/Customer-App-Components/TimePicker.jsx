@@ -10,8 +10,13 @@ const TimeSlotPicker = ({
   const [selectedSlot, setSelectedSlot] = useState(null);
 
   const handleSlotClick = (slot) => {
-    setSelectedSlot(slot);
-    onTimeSlotSelect(slot);
+    if (selectedSlot === slot) {
+      setSelectedSlot(null);
+      onTimeSlotSelect("");
+    } else {
+      setSelectedSlot(slot);
+      onTimeSlotSelect(slot);
+    }
   };
 
   // Sample time slots (replace with your actual data)
