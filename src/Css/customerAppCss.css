@@ -349,11 +349,11 @@ body {
   padding: 0.5rem;
   border: 1px solid #e5e7eb; /* Light gray border */
   border-radius: 50%;
-  /* background: rgb(164, 114, 114); */
 }
 
 .next-month-button:hover,
-.previous-month-button:hover {
+.previous-month-button:hover,
+.today-button:hover {
   background: #eff6ff; /* Light blue bg on hover */
   color: #1d4ed8;
   border-color: #1d4ed8; /* Darker blue on hover */
@@ -361,10 +361,25 @@ body {
 }
 
 .next-month-button:active,
-.previous-month-button:active {
+.previous-month-button:active,
+.today-button:active {
   background: #e0e7ff; /* Light blue press */
   border: 1.5px solid #2563eb; /* Border emphasis */
   transform: scale(0.98); /* Micro-interaction */
+}
+
+.today-button {
+  min-width: 80px;
+  font-size: 0.875rem;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb; /* Light gray border */
+  border-radius: 25px;
+  background: inherit;
+}
+
+.today-button:focus:not(:focus-visible) {
+  outline: none;
+  background: transparent !important;
 }
 
 .day.unclickable {

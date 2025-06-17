@@ -41,13 +41,13 @@ function DateUI({ choosenDate, selectDate: onSelectDate }) {
                 setActiveDate(activeDate.month(activeDate.month() - 1));
               }}
             />
-            <h3
-              onClick={() => {
-                setActiveDate(currentDate);
-              }}
+            <button
+              type="button"
+              className="today-button"
+              onClick={() => setActiveDate(currentDate)}
             >
               Today
-            </h3>
+            </button>
             <GrFormNext
               className="next-month-button"
               onClick={() => {
