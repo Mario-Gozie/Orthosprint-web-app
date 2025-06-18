@@ -11,10 +11,10 @@ function CustomerApp() {
   return (
     <Suspense fallback={<p>Loading...</p>}>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/:id/dashboard" element={<Home />} />
         <Route path="/:id/Profile" element={<Profile />} />
-        <Route path="/:id/Notification" element={<Notification />} />
-        <Route path="/:id/Booking" element={<Booking />} />
+        <Route path="/:id/notification" element={<Notification />} />
+        <Route path="/:id/booking" element={<Booking />} />
       </Routes>
     </Suspense>
   );
