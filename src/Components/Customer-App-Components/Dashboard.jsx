@@ -3,13 +3,13 @@ import Welcome from "./Welcome";
 import AppointmentCards from "./AppointmentCards";
 import "../../Css/CustomerAppCss.css";
 
-function Home() {
+function Dashboard() {
   return (
-    <div className="app-home">
+    <div className="app-dashboard">
       <Welcome />
       <AppointmentCards />
     </div>
   );
 }
 
-export default Home;
+export default Dashboard;
