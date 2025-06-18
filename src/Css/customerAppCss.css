@@ -1,6 +1,5 @@
 body {
-  width: 100vw;
-
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -23,15 +22,26 @@ body {
   flex-direction: column;
 }
 
+.AuthPageNav {
+  background: white;
+  height: 50px;
+}
+
 .main-login-signUp-container {
   height: 80vh; /* Please make sure you workon subtracting the nav from the main area */
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--tw-blue-50),
+    var(--tw-indigo-100)
+  );
 }
 
 .text-login-signUp {
   width: 80%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,7 +91,28 @@ body {
   margin: 15px 0 0 0;
   border-radius: 50%;
 }
+.login-signUp-button-container {
+  margin: 2rem 0;
+  width: 100%;
+}
+.login-signUp-button-wrapper {
+  width: 80%;
+  margin: 0 3rem;
+}
 
+/* .login,
+.signUp,
+.login-container,
+.signUp-container {
+  margin: 0 50px;
+} */
+
+.login-signUp-buttons {
+  width: 100% !important;
+  padding: 0;
+}
+
+/* Dashboard area */
 .app-dashboard {
   width: inherit;
 }

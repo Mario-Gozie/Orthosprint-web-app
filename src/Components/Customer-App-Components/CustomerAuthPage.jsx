@@ -21,13 +21,15 @@ function CustomerAuthPage() {
             </div>
           </div>
 
-          <div className="Login-SignUp-container">
-            <div className="login-signUp-buttons">
-              <button className="login">Login</button>
-              <button className="signUp">Sign up</button>
+          <div className="login-signUp-button-container">
+            <div className="login-signUp-button-wrapper">
+              <div className="login-signUp-buttons">
+                <button className="login">Login</button>
+                <button className="signUp">Sign up</button>
+              </div>
+              <Login />
+              <SignUp />
             </div>
-            <Login />
-            <SignUp />
           </div>
         </div>
       </div>
