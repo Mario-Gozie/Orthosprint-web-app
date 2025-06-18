@@ -9,23 +9,25 @@ function CustomerAuthPage() {
   return (
     <div className="login-signUp">
       <AuthPageNav />
-      <div className="text-login-signUp">
-        <div className="text-bone-buttons-container">
-          <div className="bone-icon-container">
-            <FaBone style={{ transform: "rotate(135deg" }} />
+      <div className="main-login-signUp-container">
+        <div className="text-login-signUp">
+          <div className="text-bone-buttons-container">
+            <div className="bone-icon-container">
+              <FaBone style={{ transform: "rotate(135deg" }} />
+            </div>
+            <div className="login-signup-text">
+              <h3>Orthosprint P&O Centre</h3>
+              <p>Prosthetic & Orthotic Excellence</p>
+            </div>
+            <div className="login-signUp-buttons">
+              <button className="login">Login</button>
+              <button className="signUp">Sign up</button>
+            </div>
           </div>
-          <div className="login-signup-text">
-            <h3>Orthosprint P&O Centre</h3>
-            <p>Prosthetic & Orthotic Excellence</p>
+          <div className="Login-SignUp-container">
+            <Login />
+            <SignUp />
           </div>
-          <div className="login-signUp-buttons">
-            <button className="login">Login</button>
-            <button className="signUp">Sign up</button>
-          </div>
-        </div>
-        <div className="Login-SignUp-container">
-          <Login />
-          <SignUp />
         </div>
       </div>
     </div>
