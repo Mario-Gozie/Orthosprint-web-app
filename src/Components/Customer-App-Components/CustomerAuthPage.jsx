@@ -11,20 +11,21 @@ function CustomerAuthPage() {
       <AuthPageNav />
       <div className="main-login-signUp-container">
         <div className="text-login-signUp">
-          <div className="text-bone-buttons-container">
+          <div className="text-bone-container">
             <div className="bone-icon-container">
-              <FaBone style={{ transform: "rotate(135deg" }} />
+              <FaBone className="bone-Icon" />
             </div>
             <div className="login-signup-text">
               <h3>Orthosprint P&O Centre</h3>
               <p>Prosthetic & Orthotic Excellence</p>
             </div>
+          </div>
+
+          <div className="Login-SignUp-container">
             <div className="login-signUp-buttons">
               <button className="login">Login</button>
               <button className="signUp">Sign up</button>
             </div>
-          </div>
-          <div className="Login-SignUp-container">
             <Login />
             <SignUp />
           </div>
