@@ -100,16 +100,17 @@ body {
   margin: 0 3rem;
 }
 
-/* .login,
-.signUp,
-.login-container,
-.signUp-container {
-  margin: 0 50px;
-} */
-
-.login-signUp-buttons {
-  width: 100% !important;
-  padding: 0;
+.login {
+  width: 50%;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px white solid;
+}
+.signUp {
+  width: 50%;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px white solid;
 }
 
 /* Dashboard area */
