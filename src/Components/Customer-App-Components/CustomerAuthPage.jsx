@@ -28,7 +28,7 @@ function CustomerAuthPage() {
                 <button className="signUp">Sign up</button>
               </div>
               <Login />
-              <SignUp />
+              {/* <SignUp /> */}
             </div>
           </div>
         </div>
