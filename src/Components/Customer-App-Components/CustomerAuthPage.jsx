@@ -24,7 +24,7 @@ function CustomerAuthPage() {
           <div className="login-signUp-button-container">
             <div className="login-signUp-button-wrapper">
               <div className="login-signUp-buttons">
-                <button className="login">Login</button>
+                <button className="login active-btn">Login</button>
                 <button className="signUp">Sign up</button>
               </div>
               <Login />
