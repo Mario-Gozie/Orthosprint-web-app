@@ -27,8 +27,8 @@ function CustomerAuthPage() {
                 <button className="login active-btn">Login</button>
                 <button className="signUp">Sign up</button>
               </div>
-              <Login />
-              {/* <SignUp /> */}
+              {/* <Login /> */}
+              <SignUp />
             </div>
           </div>
         </div>
