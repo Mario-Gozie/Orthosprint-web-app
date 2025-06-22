@@ -1,6 +1,16 @@
 import React from "react";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
-function SignUp() {
+function SignUp({
+  showPassword,
+  setShowPassword,
+  password,
+  setPassword,
+  confirmPassword,
+  setConfirmPassword,
+  setShowConfirmPassword,
+  showConfirmPassword,
+}) {
   return (
     <form className="form" id="registerForm">
       <div className="form-row">
@@ -54,13 +64,18 @@ function SignUp() {
         <div className="form-group password-input">
           <label htmlFor="registerPassword">Password</label>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             id="registerPassword"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             name="password"
             required
           />
-          <span className="input-icon" onClick={console.log("reveal password")}>
-            👁️
+          <span
+            className="input-icon"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? <FiEye /> : <FiEyeOff />}
           </span>
           <div className="error-message" id="registerPasswordError">
             Password must be at least 8 characters
@@ -69,13 +84,18 @@ function SignUp() {
         <div className="form-group password-input">
           <label htmlFor="confirmPassword">Confirm Password</label>
           <input
-            type="password"
+            type={showConfirmPassword ? "text" : "password"}
             id="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             name="confirmPassword"
             required
           />
-          <span className="input-icon" onClick={console.log("reveal password")}>
-            👁️
+          <span
+            className="input-icon"
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+          >
+            {showConfirmPassword ? <FiEye /> : <FiEyeOff />}
           </span>
           <div className="error-message" id="confirmPasswordError">
             Passwords do not match

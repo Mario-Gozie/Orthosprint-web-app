@@ -3,9 +3,15 @@ import Login from "./Login";
 import AuthPageNav from "./AuthPageNav";
 import SignUp from "./SignUp";
 import { FaBone } from "react-icons/fa";
+import { useState } from "react";
+import { FiEye, FiEyeOff, FiLock } from "react-icons/fi"; // Feather icons (modern)
 import "../../Css/CustomerAppCss.css";
 
 function CustomerAuthPage() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState(""); // State for password
+  const [confirmPassword, setConfirmPassword] = useState(""); // State for password
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   return (
     <div className="login-signUp">
       <AuthPageNav />
@@ -27,8 +33,19 @@ function CustomerAuthPage() {
                 <button className="login active-btn">Login</button>
                 <button className="signUp">Sign up</button>
               </div>
-              {/* <Login /> */}
-              <SignUp />
+              {/* <Login showPassword={showPassword}
+                setShowPassword={setShowPassword} password={password}
+                setPassword={setPassword} /> */}
+              <SignUp
+                showPassword={showPassword}
+                setShowPassword={setShowPassword}
+                password={password}
+                setPassword={setPassword}
+                confirmPassword={confirmPassword}
+                setConfirmPassword={setConfirmPassword}
+                setShowConfirmPassword={setShowConfirmPassword}
+                showConfirmPassword={showConfirmPassword}
+              />
             </div>
           </div>
         </div>
