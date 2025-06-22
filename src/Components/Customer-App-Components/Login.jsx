@@ -1,4 +1,9 @@
 import React from "react";
+// ✅ Correct imports (choose one)
+import { FcGoogle } from "react-icons/fc"; // Google (color)
+import { FaGoogle } from "react-icons/fa"; // Google (solid)
+// import { SiMicrosoft, SiApple } from "react-icons/si"; // Microsoft, Apple
+import { FaGithub, FaFacebook, FaTwitter } from "react-icons/fa"; // GitHub, FB, Twitter
 import "../../Css/CustomerAppCss.css";
 
 function Login() {
@@ -40,10 +45,17 @@ function Login() {
 
       <div className="social-login">
         <button type="button" className="social-btn">
-          <span>📧</span> Google
+          {/* <span>📧</span> Google */}
+          <FcGoogle />
+        </button>
+
+        <button type="button" className="social-btn">
+          {/* <span>🏢</span> Microsoft */}
+          <FaFacebook />
         </button>
         <button type="button" className="social-btn">
-          <span>🏢</span> Microsoft
+          {/* <span>🏢</span> Microsoft */}
+          <FaTwitter />
         </button>
       </div>
     </form>

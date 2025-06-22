@@ -124,7 +124,12 @@ body {
   color: #2c5aa0;
   border-radius: 10px;
   border: 1px white solid;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 2px 8px rgba(0.5, 0.2, 0.3, 0.2);
+}
+
+.form {
+  margin: 0.8rem 0;
 }
 
 .error-message {
@@ -236,7 +241,7 @@ body {
 
 .social-login {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
   margin-top: 20px;
 }
