@@ -62,16 +62,13 @@ function Login({
 
       <div className="social-login">
         <button type="button" className="social-btn">
-          {/* <span>📧</span> Google */}
           <FcGoogle />
         </button>
 
         <button type="button" className="social-btn">
-          {/* <span>🏢</span> Microsoft */}
           <FaFacebook />
         </button>
         <button type="button" className="social-btn">
-          {/* <span>🏢</span> Microsoft */}
           <FaXTwitter />
         </button>
       </div>
