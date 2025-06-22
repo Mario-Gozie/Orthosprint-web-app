@@ -59,10 +59,7 @@ function SignUp() {
             name="password"
             required
           />
-          <span
-            className="input-icon"
-            onclick="togglePassword('registerPassword')"
-          >
+          <span className="input-icon" onClick={console.log("reveal password")}>
             👁️
           </span>
           <div className="error-message" id="registerPasswordError">
@@ -77,10 +74,7 @@ function SignUp() {
             name="confirmPassword"
             required
           />
-          <span
-            className="input-icon"
-            onclick="togglePassword('confirmPassword')"
-          >
+          <span className="input-icon" onClick={console.log("reveal password")}>
             👁️
           </span>
           <div className="error-message" id="confirmPasswordError">
