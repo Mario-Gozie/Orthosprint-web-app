@@ -33,10 +33,13 @@ function CustomerAuthPage() {
                 <button className="login active-btn">Login</button>
                 <button className="signUp">Sign up</button>
               </div>
-              {/* <Login showPassword={showPassword}
-                setShowPassword={setShowPassword} password={password}
-                setPassword={setPassword} /> */}
-              <SignUp
+              <Login
+                showPassword={showPassword}
+                setShowPassword={setShowPassword}
+                password={password}
+                setPassword={setPassword}
+              />
+              {/* <SignUp
                 showPassword={showPassword}
                 setShowPassword={setShowPassword}
                 password={password}
@@ -45,7 +48,7 @@ function CustomerAuthPage() {
                 setConfirmPassword={setConfirmPassword}
                 setShowConfirmPassword={setShowConfirmPassword}
                 showConfirmPassword={showConfirmPassword}
-              />
+              /> */}
             </div>
           </div>
         </div>

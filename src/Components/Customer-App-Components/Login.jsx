@@ -3,9 +3,10 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc"; // Google (color)
 import { FaGoogle, FaFacebook } from "react-icons/fa"; // Google (solid)
 import { FaXTwitter } from "react-icons/fa6"; // Note: 'fa6' for Font Awesome 6+
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import "../../Css/CustomerAppCss.css";
 
-function Login() {
+function Login({ password, setPassword, showPassword, setShowPassword }) {
   return (
     <form className="form active" id="loginForm">
       <div className="form-group">
@@ -18,8 +19,20 @@ function Login() {
 
       <div className="form-group password-input">
         <label htmlFor="loginPassword">Password</label>
-        <input type="password" id="loginPassword" name="password" required />
-        <span className="input-icon">👁️</span>
+        <input
+          type={showPassword ? "text" : "password"}
+          id="loginPassword"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          name="password"
+          required
+        />
+        <span
+          className="input-icon"
+          onClick={() => setShowPassword(!showPassword)}
+        >
+          {showPassword ? <FiEye /> : <FiEyeOff />}
+        </span>
         <div className="error-message" id="loginPasswordError">
           Password is required
         </div>
