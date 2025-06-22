@@ -8,8 +8,8 @@ import { FiEye, FiEyeOff, FiLock } from "react-icons/fi"; // Feather icons (mode
 import "../../Css/CustomerAppCss.css";
 
 function CustomerAuthPage() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [password, setPassword] = useState(""); // State for password
+  const [showClientPassword, setShowClientPassword] = useState(false);
+  const [clientPassword, setClientPassword] = useState(""); // State for password
   const [confirmPassword, setConfirmPassword] = useState(""); // State for password
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   return (
@@ -34,10 +34,10 @@ function CustomerAuthPage() {
                 <button className="signUp">Sign up</button>
               </div>
               <Login
-                showPassword={showPassword}
-                setShowPassword={setShowPassword}
-                password={password}
-                setPassword={setPassword}
+                showClientPassword={showClientPassword}
+                setShowClientPassword={setShowClientPassword}
+                clientPassword={clientPassword}
+                setClientPassword={setClientPassword}
               />
               {/* <SignUp
                 showPassword={showPassword}

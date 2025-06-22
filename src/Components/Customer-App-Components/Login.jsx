@@ -6,7 +6,12 @@ import { FaXTwitter } from "react-icons/fa6"; // Note: 'fa6' for Font Awesome 6+
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import "../../Css/CustomerAppCss.css";
 
-function Login({ password, setPassword, showPassword, setShowPassword }) {
+function Login({
+  clientPassword,
+  setClientPassword,
+  showClientPassword,
+  setShowClientPassword,
+}) {
   return (
     <form className="form active" id="loginForm">
       <div className="form-group">
@@ -20,18 +25,18 @@ function Login({ password, setPassword, showPassword, setShowPassword }) {
       <div className="form-group password-input">
         <label htmlFor="loginPassword">Password</label>
         <input
-          type={showPassword ? "text" : "password"}
+          type={showClientPassword ? "text" : "password"}
           id="loginPassword"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={clientPassword}
+          onChange={(e) => setClientPassword(e.target.value)}
           name="password"
           required
         />
         <span
           className="input-icon"
-          onClick={() => setShowPassword(!showPassword)}
+          onClick={() => setShowClientPassword(!showClientPassword)}
         >
-          {showPassword ? <FiEye /> : <FiEyeOff />}
+          {showClientPassword ? <FiEye /> : <FiEyeOff />}
         </span>
         <div className="error-message" id="loginPasswordError">
           Password is required
