@@ -2,12 +2,15 @@ import React from "react";
 import Login from "./Login";
 import AuthPageNav from "./AuthPageNav";
 import SignUp from "./SignUp";
+import clsx from "clsx";
 import { FaBone } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { FiEye, FiEyeOff, FiLock } from "react-icons/fi"; // Feather icons (modern)
+
 import "../../Css/CustomerAppCss.css";
 
 function CustomerAuthPage() {
+  const [activeForm, setActiveForm] = useState("login");
   const [showClientPassword, setShowClientPassword] = useState(false);
   const [clientPassword, setClientPassword] = useState(""); // State for password
   const [showNewPassword, setShowNewPassword] = useState(false);
@@ -32,25 +35,53 @@ function CustomerAuthPage() {
           <div className="login-signUp-button-container">
             <div className="login-signUp-button-wrapper">
               <div className="login-signUp-buttons">
-                <button className="login active-btn">Login</button>
-                <button className="signUp">Sign up</button>
+                <button
+                  className={clsx("login", {
+                    "active-btn": activeForm === `login`,
+                  })}
+                  onClick={() => setActiveForm("login")}
+                >
+                  Login
+                </button>
+                <button
+                  className={clsx("signUp", {
+                    "active-btn": activeForm === `signUp`,
+                  })}
+                  onClick={() => setActiveForm("signUp")}
+                >
+                  Sign up
+                </button>
               </div>
-              {/* <Login
-                showClientPassword={showClientPassword}
-                setShowClientPassword={setShowClientPassword}
-                clientPassword={clientPassword}
-                setClientPassword={setClientPassword}
-              /> */}
-              <SignUp
-                showNewPassword={showNewPassword}
-                setShowNewPassword={setShowNewPassword}
-                newPassword={newPassword}
-                setNewPassword={setNewPassword}
-                confirmPassword={confirmPassword}
-                setConfirmPassword={setConfirmPassword}
-                setShowConfirmPassword={setShowConfirmPassword}
-                showConfirmPassword={showConfirmPassword}
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeForm}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="absolute inset-0"
+                >
+                  {activeForm === "login" ? (
+                    <Login
+                      showClientPassword={showClientPassword}
+                      setShowClientPassword={setShowClientPassword}
+                      clientPassword={clientPassword}
+                      setClientPassword={setClientPassword}
+                    />
+                  ) : (
+                    <SignUp
+                      showNewPassword={showNewPassword}
+                      setShowNewPassword={setShowNewPassword}
+                      newPassword={newPassword}
+                      setNewPassword={setNewPassword}
+                      confirmPassword={confirmPassword}
+                      setConfirmPassword={setConfirmPassword}
+                      setShowConfirmPassword={setShowConfirmPassword}
+                      showConfirmPassword={showConfirmPassword}
+                    />
+                  )}
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </div>
