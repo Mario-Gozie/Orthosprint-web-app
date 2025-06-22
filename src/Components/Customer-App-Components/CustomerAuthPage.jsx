@@ -10,6 +10,8 @@ import "../../Css/CustomerAppCss.css";
 function CustomerAuthPage() {
   const [showClientPassword, setShowClientPassword] = useState(false);
   const [clientPassword, setClientPassword] = useState(""); // State for password
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [newPassword, setNewPassword] = useState(""); // State for password
   const [confirmPassword, setConfirmPassword] = useState(""); // State for password
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   return (
@@ -33,22 +35,22 @@ function CustomerAuthPage() {
                 <button className="login active-btn">Login</button>
                 <button className="signUp">Sign up</button>
               </div>
-              <Login
+              {/* <Login
                 showClientPassword={showClientPassword}
                 setShowClientPassword={setShowClientPassword}
                 clientPassword={clientPassword}
                 setClientPassword={setClientPassword}
-              />
-              {/* <SignUp
-                showPassword={showPassword}
-                setShowPassword={setShowPassword}
-                password={password}
-                setPassword={setPassword}
+              /> */}
+              <SignUp
+                showNewPassword={showNewPassword}
+                setShowNewPassword={setShowNewPassword}
+                newPassword={newPassword}
+                setNewPassword={setNewPassword}
                 confirmPassword={confirmPassword}
                 setConfirmPassword={setConfirmPassword}
                 setShowConfirmPassword={setShowConfirmPassword}
                 showConfirmPassword={showConfirmPassword}
-              /> */}
+              />
             </div>
           </div>
         </div>

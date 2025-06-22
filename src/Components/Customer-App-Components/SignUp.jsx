@@ -2,10 +2,10 @@ import React from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
 function SignUp({
-  showPassword,
-  setShowPassword,
-  password,
-  setPassword,
+  showNewPassword,
+  setShowNewPassword,
+  newPassword,
+  setNewPassword,
   confirmPassword,
   setConfirmPassword,
   setShowConfirmPassword,
@@ -64,18 +64,18 @@ function SignUp({
         <div className="form-group password-input">
           <label htmlFor="registerPassword">Password</label>
           <input
-            type={showPassword ? "text" : "password"}
+            type={showNewPassword ? "text" : "password"}
             id="registerPassword"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
             name="password"
             required
           />
           <span
             className="input-icon"
-            onClick={() => setShowPassword(!showPassword)}
+            onClick={() => setShowNewPassword(!showNewPassword)}
           >
-            {showPassword ? <FiEye /> : <FiEyeOff />}
+            {showNewPassword ? <FiEye /> : <FiEyeOff />}
           </span>
           <div className="error-message" id="registerPasswordError">
             Password must be at least 8 characters
