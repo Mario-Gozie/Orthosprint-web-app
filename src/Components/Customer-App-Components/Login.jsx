@@ -1,9 +1,8 @@
 import React from "react";
 // ✅ Correct imports (choose one)
 import { FcGoogle } from "react-icons/fc"; // Google (color)
-import { FaGoogle } from "react-icons/fa"; // Google (solid)
-// import { SiMicrosoft, SiApple } from "react-icons/si"; // Microsoft, Apple
-import { FaGithub, FaFacebook, FaTwitter } from "react-icons/fa"; // GitHub, FB, Twitter
+import { FaGoogle, FaFacebook } from "react-icons/fa"; // Google (solid)
+import { FaXTwitter } from "react-icons/fa6"; // Note: 'fa6' for Font Awesome 6+
 import "../../Css/CustomerAppCss.css";
 
 function Login() {
@@ -55,7 +54,7 @@ function Login() {
         </button>
         <button type="button" className="social-btn">
           {/* <span>🏢</span> Microsoft */}
-          <FaTwitter />
+          <FaXTwitter />
         </button>
       </div>
     </form>
