@@ -1,9 +1,12 @@
 import React from "react";
 import { lazy, Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
 
-const Login = lazy(() => import("./Login"));
-const SignUp = lazy(() => import("./SignUp"));
+import { Routes, Route, Navigate } from "react-router-dom";
+import { AuthRoutes } from "./AuthRoutes";
+
+import { AuthProvider } from "./AuthProvider";
+
+const CustomerAuthPage = lazy(() => import("./CustomerAuthPage"));
 const Dashboard = lazy(() => import("./Dashboard"));
 const Profile = lazy(() => import("./Profile"));
 const Notification = lazy(() => import("./Notification"));
@@ -12,27 +15,79 @@ const EditAppointment = lazy(() => import("./EditAppointment"));
 
 function CustomerApp() {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <Routes>
-        <Route path="/Login" element={<Login />} />
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/:id/dashboard" element={<Dashboard />} />
-        <Route path="/:id/profile" element={<Profile />} />
-        <Route path="/:id/notification" element={<Notification />} />
-        <Route path="/:id/booking" element={<Booking />} />
-        <Route
-          path="booking/:appointmentId/edit"
-          element={<EditAppointment />}
-        />
+    <AuthProvider>
+      <Suspense fallback={<div className="loading-spinner">Loading...</div>}>
+        <Routes>
+          {/* Public routes */}
+          <Route
+            path="/login"
+            element={
+              <AuthRoutes.Public>
+                <CustomerAuthPage />
+              </AuthRoutes.Public>
+            }
+          />
 
-        {/* This below is my default path */}
-        <Route index element={<Dashboard />} />
-        <Route
-          path="*"
-          element={<div>Customer App 404 - Page not found</div>}
-        />
-      </Routes>
-    </Suspense>
+          {/* Protected routes */}
+          <Route
+            path="/:id/dashboard"
+            element={
+              <AuthRoutes.Private>
+                <Dashboard />
+              </AuthRoutes.Private>
+            }
+          />
+          <Route
+            path="/:id/profile"
+            element={
+              <AuthRoutes.Private>
+                <Profile />
+              </AuthRoutes.Private>
+            }
+          />
+          <Route
+            path="/:id/notification"
+            element={
+              <AuthRoutes.Private>
+                <Notification />
+              </AuthRoutes.Private>
+            }
+          />
+          <Route
+            path="/:id/booking"
+            element={
+              <AuthRoutes.Private>
+                <Booking />
+              </AuthRoutes.Private>
+            }
+          />
+          <Route
+            path="/booking/:appointmentId/edit"
+            element={
+              <AuthRoutes.Private>
+                <EditAppointment />
+              </AuthRoutes.Private>
+            }
+          />
+
+          {/* Default routes */}
+          <Route
+            index
+            element={
+              <AuthRoutes.Private>
+                <Dashboard />
+              </AuthRoutes.Private>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <div className="not-found">Customer App 404 - Page not found</div>
+            }
+          />
+        </Routes>
+      </Suspense>
+    </AuthProvider>
   );
 }
 

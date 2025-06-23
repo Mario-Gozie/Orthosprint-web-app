@@ -4,12 +4,22 @@ import AuthPageNav from "./AuthPageNav";
 import SignUp from "./SignUp";
 import clsx from "clsx";
 import { FaBone } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import FormDisplayAnimation from "./formDisplayAnimation";
+import {
+  useLocation,
+  useNavigate,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 
 import "../../Css/CustomerAppCss.css";
 
 function CustomerAuthPage() {
+  const location = useLocation(); // Get current route location
+  const navigate = useNavigate();
   const [activeForm, setActiveForm] = useState("login");
   const [showClientPassword, setShowClientPassword] = useState(false);
   const [clientPassword, setClientPassword] = useState(""); // State for password
@@ -35,52 +45,56 @@ function CustomerAuthPage() {
           <div className="login-signUp-button-container">
             <div className="login-signUp-button-wrapper">
               <div className="login-signUp-buttons">
-                <button
+                <Link
+                  to="app/login"
                   className={clsx("login", {
-                    "active-btn": activeForm === `login`,
+                    "active-btn": location.pathname === "/login",
                   })}
-                  onClick={() => setActiveForm("login")}
                 >
                   Login
-                </button>
-                <button
+                </Link>
+                <Link
+                  to="/signUp"
                   className={clsx("signUp", {
-                    "active-btn": activeForm === `signUp`,
+                    "active-btn": location.pathname === "/signUp",
                   })}
-                  onClick={() => setActiveForm("signUp")}
-                >
-                  Sign up
-                </button>
+                ></Link>
               </div>
+
               <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeForm}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="absolute inset-0"
-                >
-                  {activeForm === "login" ? (
-                    <Login
-                      showClientPassword={showClientPassword}
-                      setShowClientPassword={setShowClientPassword}
-                      clientPassword={clientPassword}
-                      setClientPassword={setClientPassword}
-                    />
-                  ) : (
-                    <SignUp
-                      showNewPassword={showNewPassword}
-                      setShowNewPassword={setShowNewPassword}
-                      newPassword={newPassword}
-                      setNewPassword={setNewPassword}
-                      confirmPassword={confirmPassword}
-                      setConfirmPassword={setConfirmPassword}
-                      setShowConfirmPassword={setShowConfirmPassword}
-                      showConfirmPassword={showConfirmPassword}
-                    />
-                  )}
-                </motion.div>
+                <Routes location={location} key={location.pathname}>
+                  <Route
+                    path="/login"
+                    element={
+                      <FormDisplayAnimation>
+                        <Login
+                          showClientPassword={showClientPassword}
+                          setShowClientPassword={setShowClientPassword}
+                          clientPassword={clientPassword}
+                          setClientPassword={setClientPassword}
+                        />
+                      </FormDisplayAnimation>
+                    }
+                  />
+                  <Route
+                    path="/signUp"
+                    element={
+                      <FormDisplayAnimation>
+                        <SignUp
+                          showNewPassword={showNewPassword}
+                          setShowNewPassword={setShowNewPassword}
+                          newPassword={newPassword}
+                          setNewPassword={setNewPassword}
+                          confirmPassword={confirmPassword}
+                          setConfirmPassword={setConfirmPassword}
+                          setShowConfirmPassword={setShowConfirmPassword}
+                          showConfirmPassword={showConfirmPassword}
+                        />
+                      </FormDisplayAnimation>
+                    }
+                  />
+                  {/* <Route path="/" element={<Navigate to="/login" replace />} /> */}
+                </Routes>
               </AnimatePresence>
             </div>
           </div>
