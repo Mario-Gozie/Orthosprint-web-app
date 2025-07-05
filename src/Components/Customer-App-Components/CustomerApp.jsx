@@ -58,7 +58,7 @@ function CustomerApp() {
           }
         />
         <Route
-          path="/booking/:appointmentId/edit"
+          path="/:id/booking/:appointmentId/edit"
           element={
             <AuthRoutes.Private>
               <EditAppointment />
@@ -66,19 +66,23 @@ function CustomerApp() {
           }
         />
 
-        {/* Default routes */}
+        {/* Default Route */}
         <Route
           index
           element={
             <AuthRoutes.Private>
-              <Dashboard />
+              <Navigate to={`/${user?.id}/dashboard`} replace />
             </AuthRoutes.Private>
           }
         />
+
+        {/* 404 Handling */}
         <Route
           path="*"
           element={
-            <div className="not-found">Customer App 404 - Page not found</div>
+            <AuthRoutes.Private>
+              <Navigate to={`/${user?.id}/dashboard`} replace />
+            </AuthRoutes.Private>
           }
         />
       </Routes>

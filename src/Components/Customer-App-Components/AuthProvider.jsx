@@ -10,8 +10,9 @@ export function AuthProvider({ children }) {
     <AuthContext.Provider
       value={{
         isAuthenticated,
-        // login: () => setIsAuthenticated(true),
-        // logout: () => setIsAuthenticated(false),
+
+        login: () => setIsAuthenticated(true),
+        logout: () => setIsAuthenticated(false),
       }}
     >
       {children}
