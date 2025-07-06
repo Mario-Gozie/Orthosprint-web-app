@@ -4,6 +4,7 @@ import { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 const CustomerAuthPage = lazy(() => import("./CustomerAuthPage"));
+
 const Dashboard = lazy(() => import("./Dashboard"));
 const Profile = lazy(() => import("./Profile"));
 const Notification = lazy(() => import("./Notification"));
@@ -16,7 +17,7 @@ function CustomerApp() {
       <Routes>
         {/* Public routes */}
         <Route
-          path="/login"
+          path="/auth/*"
           element={
             <AuthRoutes.Public>
               <CustomerAuthPage />
@@ -25,53 +26,23 @@ function CustomerApp() {
         />
 
         {/* Protected routes */}
-        <Route
-          path="/:id/dashboard"
-          element={
-            <AuthRoutes.Private>
-              <Dashboard />
-            </AuthRoutes.Private>
-          }
-        />
-        <Route
-          path="/:id/profile"
-          element={
-            <AuthRoutes.Private>
-              <Profile />
-            </AuthRoutes.Private>
-          }
-        />
-        <Route
-          path="/:id/notification"
-          element={
-            <AuthRoutes.Private>
-              <Notification />
-            </AuthRoutes.Private>
-          }
-        />
-        <Route
-          path="/:id/booking"
-          element={
-            <AuthRoutes.Private>
-              <Booking />
-            </AuthRoutes.Private>
-          }
-        />
-        <Route
-          path="/:id/booking/:appointmentId/edit"
-          element={
-            <AuthRoutes.Private>
-              <EditAppointment />
-            </AuthRoutes.Private>
-          }
-        />
+        <Route element={<AuthRoutes.Private />}>
+          <Route path="/:id/dashboard" element={<Dashboard />} />
+          <Route path="/:id/profile" element={<Profile />} />
+          <Route path="/:id/notification" element={<Notification />} />
+          <Route path="/:id/booking" element={<Booking />} />
+          <Route
+            path="/:id/booking/:appointmentId/edit"
+            element={<EditAppointment />}
+          />
+        </Route>
 
         {/* Default Route */}
         <Route
           index
           element={
             <AuthRoutes.Private>
-              <Navigate to={`/${user?.id}/dashboard`} replace />
+              <Navigate to={`/:id/dashboard`} replace />
             </AuthRoutes.Private>
           }
         />
@@ -81,7 +52,7 @@ function CustomerApp() {
           path="*"
           element={
             <AuthRoutes.Private>
-              <Navigate to={`/${user?.id}/dashboard`} replace />
+              <Navigate to={`/:id/dashboard`} replace />
             </AuthRoutes.Private>
           }
         />
