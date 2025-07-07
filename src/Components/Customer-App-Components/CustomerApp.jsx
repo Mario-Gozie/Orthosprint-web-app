@@ -1,7 +1,7 @@
 import React from "react";
 import { lazy, Suspense } from "react";
-
 import { Routes, Route, Navigate } from "react-router-dom";
+import { AuthRoutes } from "./AuthRoutes.jsx"; // Add this import
 
 const CustomerAuthPage = lazy(() => import("./CustomerAuthPage"));
 
@@ -17,7 +17,7 @@ function CustomerApp() {
       <Routes>
         {/* Public routes */}
         <Route
-          path="/auth/*"
+          index // This makes it the default route for /app
           element={
             <AuthRoutes.Public>
               <CustomerAuthPage />
@@ -27,35 +27,18 @@ function CustomerApp() {
 
         {/* Protected routes */}
         <Route element={<AuthRoutes.Private />}>
-          <Route path="/:id/dashboard" element={<Dashboard />} />
-          <Route path="/:id/profile" element={<Profile />} />
-          <Route path="/:id/notification" element={<Notification />} />
-          <Route path="/:id/booking" element={<Booking />} />
+          <Route path=":id/dashboard" element={<Dashboard />} />
+          <Route path=":id/profile" element={<Profile />} />
+          <Route path=":id/notification" element={<Notification />} />
+          <Route path=":id/booking" element={<Booking />} />
           <Route
-            path="/:id/booking/:appointmentId/edit"
+            path=":id/booking/:appointmentId/edit"
             element={<EditAppointment />}
           />
         </Route>
 
-        {/* Default Route */}
-        <Route
-          index
-          element={
-            <AuthRoutes.Private>
-              <Navigate to={`/:id/dashboard`} replace />
-            </AuthRoutes.Private>
-          }
-        />
-
-        {/* 404 Handling */}
-        <Route
-          path="*"
-          element={
-            <AuthRoutes.Private>
-              <Navigate to={`/:id/dashboard`} replace />
-            </AuthRoutes.Private>
-          }
-        />
+        {/* 404 Handling - keep only this */}
+        <Route path="*" element={<Navigate to="/app" replace />} />
       </Routes>
     </Suspense>
   );

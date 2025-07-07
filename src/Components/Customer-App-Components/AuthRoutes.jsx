@@ -4,10 +4,10 @@ import { useAuth } from "./AuthProvider"; // Import the useAuth hook
 export const AuthRoutes = {
   Public: ({ children }) => {
     const { isAuthenticated } = useAuth();
-    return isAuthenticated ? <Navigate to="/:id/dashboard" /> : children;
+    return isAuthenticated ? <Navigate to="/1/dashboard" /> : children;
   },
   Private: ({ children }) => {
     const { isAuthenticated } = useAuth();
-    return isAuthenticated ? children : <Navigate to="/login" />;
+    return isAuthenticated ? children : <Navigate to="/app" />;
   },
 };
